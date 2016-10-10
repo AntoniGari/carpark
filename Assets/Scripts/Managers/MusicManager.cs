@@ -2,6 +2,9 @@
 using System.Collections;
 using EnumGameState;
 
+/// <summary>
+/// Music manager.
+/// </summary>
 public class MusicManager : MonoBehaviour {
 
 	/// <summary>
@@ -47,6 +50,39 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Fades the music.
+	/// </summary>
+	/// <param name="fadeTime">Fade time.</param>
+	public void FadeMusic(float fadeTime) {
+		GetCameraSource ();
+		StartCoroutine(_FadeMusic(fadeTime)); 
+	}
+
+	/// <summary>
+	/// Fades the music.
+	/// </summary>
+	/// <returns>The music.</returns>
+	/// <param name="fadeTime">Fade time.</param>
+	private IEnumerator _FadeMusic(float fadeTime) {
+		float t = fadeTime;
+		while (t > 0) {
+			yield return null;
+			t -= Time.deltaTime;
+			_musicSource.volume = t / fadeTime;
+		}
+		yield break;
+	}
+
+	/// <summary>
+	/// Gets the camera source.
+	/// </summary>
+	public void GetCameraSource(){
+		_musicSource = ComponentManager.camera.GetCameraAudioSource();
+		_musicSource.volume = _musicVolume;
+		_musicSource.loop = true;
+	}
+
+	/// <summary>
 	/// Gets the music volume.
 	/// </summary>
 	/// <returns>The music volume.</returns>
@@ -66,7 +102,7 @@ public class MusicManager : MonoBehaviour {
 	/// Loads the audio files.
 	/// </summary>
 	public void LoadAudioFiles() {
-		arrayMusic =  Resources.LoadAll("Audio/Music", typeof(AudioClip));
+		arrayMusic =  Resources.LoadAll("Music", typeof(AudioClip));
 	}
 
 	/// <summary>
@@ -109,12 +145,5 @@ public class MusicManager : MonoBehaviour {
 	/// </summary>
 	public void StopMusic(){
 		_musicSource.Stop();
-	}
-
-
-	public void GetCameraSource(){
-		_musicSource = Camera.main.GetComponent<AudioSource> ();
-		_musicSource.volume = _musicVolume;
-		_musicSource.loop = true;
 	}
 }

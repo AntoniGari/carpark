@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
 	/// <param name="newLevel">New level.</param>
 	public void SetLevel(SceneLevel newLevel) {
 		sceneLevel = newLevel;
-		//MusicManager.Instance.StopFX ();
+		AudioManager.Instance.StopFX ();
 		SceneManager.LoadScene((int)sceneLevel);
 		SetState (GameState.STATE_INIT_LEVEL);
 	}

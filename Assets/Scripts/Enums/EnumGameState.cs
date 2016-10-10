@@ -4,9 +4,10 @@ using System.Collections;
 /// <summary>
 /// It's a Enumeration of the Game State and the Scene Level
 /// </summary>
-
 namespace EnumGameState {
-	//Game State
+	/// <summary>
+	/// Game state.
+	/// </summary>
 	public enum GameState {
 		STATE_INIT_LEVEL,
 		STATE_PLAY,
@@ -15,7 +16,9 @@ namespace EnumGameState {
 		STATE_LOSE
 	};
 
-	//Game Level Scene
+	/// <summary>
+	/// Scene level.
+	/// </summary>
 	public enum SceneLevel {
 		LEVEL_MENU,
 		LEVEL_1,
