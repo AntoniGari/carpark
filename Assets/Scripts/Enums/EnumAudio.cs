@@ -8,7 +8,7 @@ namespace EnumAudio {
 	/// <summary>
 	/// FX clip.
 	/// </summary>
-	public enum FXClip {
+	public enum FxClip {
 		NO_FX
 	}
 }
