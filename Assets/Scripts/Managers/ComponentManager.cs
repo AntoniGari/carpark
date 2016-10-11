@@ -40,12 +40,22 @@ public class ComponentManager : MonoBehaviour {
 	/// Player components.
 	/// </summary>
 	public class PlayerComponents {
+		/// <summary>
+		/// The transform.
+		/// </summary>
 		public Transform transform;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ComponentManager+PlayerComponents"/> class.
+		/// </summary>
 		public PlayerComponents(){
 			//transform = ;
 		}
 
+		/// <summary>
+		/// Gets the player transform.
+		/// </summary>
+		/// <returns>The player transform.</returns>
 		public Transform GetPlayerTransform(){
 			return transform;
 		}
@@ -55,7 +65,7 @@ public class ComponentManager : MonoBehaviour {
 	/// All the components.
 	/// </summary>
 	public new static CameraComponents camera;
-	public new static PlayerComponents player;
+	public static PlayerComponents player;
 
 	/// <summary>
 	/// Gets the instance.
