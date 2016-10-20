@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using EnumGameState;
 
 /// <summary>
 /// Music manager.
@@ -116,7 +115,7 @@ public class MusicManager : MonoBehaviour {
 	/// Plaies the music.
 	/// </summary>
 	/// <param name="actualScene">Actual scene.</param>
-	public void PlayMusic (SceneLevel actualScene) {
+	public void PlayMusic (GameManager.SceneLevel actualScene) {
 		GetCameraSource ();
 		_musicSource.clip = arrayMusic [(int)actualScene] as AudioClip;
 		_musicSource.Play();
@@ -126,7 +125,7 @@ public class MusicManager : MonoBehaviour {
 	/// Sets the music.
 	/// </summary>
 	/// <param name="actualScene">Actual scene.</param>
-	public void SetMusic (SceneLevel actualScene) {
+	public void SetMusic (GameManager.SceneLevel actualScene) {
 		_musicSource.clip = arrayMusic [(int)actualScene] as AudioClip;
 	}
 

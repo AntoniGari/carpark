@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using EnumGameState;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +8,33 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour {
 
+	#region Game Manager Enums
 	/// <summary>
-	/// The instance.
+	/// Game state.
 	/// </summary>
-	private static GameManager instance;
+	public enum GameState {
+		STATE_INIT_LEVEL,
+		STATE_PLAY,
+		STATE_ESC,
+		STATE_WIN,
+		STATE_LOSE
+	};
+
+	/// <summary>
+	/// Scene level.
+	/// </summary>
+	public enum SceneLevel {
+		LEVEL_MENU,
+		LEVEL_1,
+		LEVEL_2,
+		LEVEL_3,
+		LEVEL_4,
+		LEVEL_5,
+		LEVEL_6,
+		LEVEL_7
+	};
+	#endregion
+
 
 	/// <summary>
 	/// The state of the game.
@@ -25,20 +48,39 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	private SceneLevel sceneLevel;
 
+	#region Singleton
 	/// <summary>
-	/// Gets the instance.
+	/// Static instance.
 	/// </summary>
-	/// <value>The instance.</value>
+	private static GameManager instance = null;
+
+	/// <summary>
+	/// Get the singleton instance
+	/// </summary>
 	public static GameManager Instance {
 		get {
 			if(instance == null) {
-				GameObject go = new GameObject ("Game State");
+				GameObject go = new GameObject ("Game Manager");
 				instance = go.AddComponent<GameManager> ();
 				DontDestroyOnLoad(go);
 			}	
 			return instance;
 		}
 	}
+	#endregion
+
+	#region ScriptableObjects
+	/// <summary>
+	/// The language manager.
+	/// </summary>
+	[HideInInspector]
+	public LanguageManager languageManager;
+
+	public void Start () {
+		//ScriptableObjects
+		languageManager = LanguageManager.Instance;
+	}
+	#endregion
 
 	/// <summary>
 	/// Initialize Singleton 
@@ -53,6 +95,7 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	public void OnApplicationQuit() {
 		instance = null;
+		languageManager = null;
 	}
 
 	/// <summary>

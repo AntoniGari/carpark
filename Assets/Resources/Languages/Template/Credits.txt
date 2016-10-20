@@ -1,0 +1,41 @@
+<color=#fdd930>CARPARK VR</color>
+
+<color=#fdd930>DICHOTOMY GAMES</color>
+
+<color=#ffb400>GAME DESIGN</color>
+Antoni Garí Romagosa
+
+<color=#ffb400>PROGRAMMING</color>
+Antoni Garí Romagosa
+
+<color=#ffb400>DESIGNERS</color>
+Sergi Mondejar Marín
+
+<color=#ffb400>GAME TESTING</color>
+
+<color=#fdd929>TRANSLATORS</color>
+<color=#fdd929>Example</color>
+
+<color=#ffb400>VERY SPECIAL THANKS</color>
+
+
+
+
+
+
+To all our family and friends: Thank you so much for your love and support during the development of Carpark. Your patience and understanding make it all possible. We love you!
+
+To our players: Thank you for your passion and enthusiasm. You continue to push us forward and inspire us. We couldn’t do it without you!
+
+
+
+
+
+Este programa se creó usando Unity 5.x. Partes de este programa son © 2005-2013 Unity Technologies
+
+Google VR es una marca comercial de Google. registrada en la Oficina de Patentes y Marcas de Estados Unidos, y puede estar registrada en determinadas jurisdicciones.
+
+XCode es una marca comercial de Apple Inc. registrada en la Oficina de Patentes y Marcas de Estados Unidos, y puede estar registrada en determinadas jurisdicciones.
+
+
+CARPARK: 2016 Dichotomy Games.

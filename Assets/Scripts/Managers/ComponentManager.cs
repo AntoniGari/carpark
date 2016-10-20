@@ -4,12 +4,7 @@ using System.Collections;
 /// <summary>
 /// Component manager.
 /// </summary>
-public class ComponentManager : MonoBehaviour {
-
-	/// <summary>
-	/// The instance.
-	/// </summary>
-	private static ComponentManager instance;
+public class ComponentManager : ScriptableObject {
 
 	/// <summary>
 	/// Camera components.
@@ -64,23 +59,25 @@ public class ComponentManager : MonoBehaviour {
 	/// <summary>
 	/// All the components.
 	/// </summary>
-	public new static CameraComponents camera;
+	public static CameraComponents camera;
 	public static PlayerComponents player;
 
+	#region Singleton
 	/// <summary>
-	/// Gets the instance.
+	/// Static instance.
 	/// </summary>
-	/// <value>The instance.</value>
+	private static ComponentManager instance = null;
+
+	/// <summary>
+	/// Get the singleton instance
+	/// </summary>
 	public static ComponentManager Instance {
 		get {
-			if(instance == null) {
-				GameObject go = new GameObject ("Component Manager");
-				instance = go.AddComponent<ComponentManager> ();
-				//DontDestroyOnLoad(go);
-			}	
+			if(instance == null) instance = CreateInstance<ComponentManager> ();
 			return instance;
 		}
 	}
+	#endregion
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ComponentManager"/> class.
