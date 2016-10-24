@@ -129,11 +129,15 @@ public class LanguageManager : ScriptableObject {
 
 			using (theReader) {
 				do {
-					if (file != "Credits.txt") {
-						line = theReader.ReadLine ();
-					} else {
-						line = theReader.ReadToEnd();
+					switch (file) {
+						case "Credits.txt":
+							line = theReader.ReadLine ();
+						break;
+						default:
+							line = theReader.ReadToEnd();
+						break;
 					}
+
 
 					if (line != null) {
 						if (!firstLine) {
