@@ -23,19 +23,19 @@ namespace InterfaceMovementCustom {
 			}
 
 			// Move focus with directional inputs.
-			if (filteredDirection.Up.WasPressed) {
+			if (filteredDirection.Up.WasPressed || Input.GetKeyDown (KeyCode.W)) {
 				MoveFocusTo( focusedButton.up );
 			}
 
-			if (filteredDirection.Down.WasPressed) {
+			if (filteredDirection.Down.WasPressed || Input.GetKeyDown (KeyCode.S)) {
 				MoveFocusTo( focusedButton.down );
 			}
 
-			if (filteredDirection.Left.WasPressed) {
+			if (filteredDirection.Left.WasPressed || Input.GetKeyDown (KeyCode.A)) {
 				MoveFocusTo( focusedButton.left );
 			}
 
-			if (filteredDirection.Right.WasPressed) {
+			if (filteredDirection.Right.WasPressed || Input.GetKeyDown (KeyCode.D)) {
 				MoveFocusTo( focusedButton.right );
 			}
 
