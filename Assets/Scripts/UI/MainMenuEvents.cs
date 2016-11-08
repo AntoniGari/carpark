@@ -13,6 +13,7 @@ public class MainMenuEvents : MonoBehaviour {
 	#region Options Menu GameObjects
 	public GameObject optionsLanguage;
 	public GameObject optionsSound;
+	public GameObject optionsVR;
 	#endregion
 
 	public GameObject backButton;
@@ -81,6 +82,7 @@ public class MainMenuEvents : MonoBehaviour {
 	public void ReturnOptions () {
 		optionsLanguage.SetActive (false);
 		//optionsSound.SetActive (false);
+		optionsVR.SetActive (false);
 		options.SetActive (true);
 	}
 	#endregion
@@ -120,27 +122,29 @@ public class MainMenuEvents : MonoBehaviour {
 		options.SetActive (true);
 		ShowBackButton ();
 	}
+
+	/// <summary>
+	/// Selects the VR options.
+	/// </summary>
+	public void SelectVROptions () {
+		options.SetActive (false);
+		optionsVR.SetActive (true);
+	}
 	#endregion
 
-	/*
-	//TOGGLE PANEL MENU WITH PANEL CREDITS AND BACK
-	public void ToggleCredits() {
-		panelMenu.SetActive (!panelMenu.activeSelf);
-		panelCredits.SetActive (!panelCredits.activeSelf);
+	#region Virtual Reality
+	/// <summary>
+	/// Toggles the distortion correction.
+	/// </summary>
+	public void ToggleDistortionCorrection() {
+		GvrViewer.Instance.DistortionCorrectionEnabled = !GvrViewer.Instance.DistortionCorrectionEnabled;
 	}
 
-	//TOGGLE PANEL MENU WITH PANEL OPTIONS AND BACK
-	public void ToggleOptions()
-	{
-		panelMenu.SetActive (!panelMenu.activeSelf);
-		panelOptions.SetActive (!panelOptions.activeSelf);
+	/// <summary>
+	/// Toggles the VR mode.
+	/// </summary>
+	public void ToggleVRMode() {
+		GvrViewer.Instance.VRModeEnabled = !GvrViewer.Instance.VRModeEnabled;
 	}
-
-	//TOGGLE PANEL MENU WITH PANEL CREDITS AND BACK
-	public void ToggleLevel()
-	{
-		panelMenu.SetActive (!panelMenu.activeSelf);
-		panelLevel.SetActive (!panelLevel.activeSelf);
-	}
-	*/
+	#endregion
 }
