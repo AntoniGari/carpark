@@ -7,6 +7,11 @@ using System.Text;
 public class LanguageManager : ScriptableObject {
 	#region Language Configuration
 	/// <summary>
+	/// The actual language.
+	/// </summary>
+	private string _actualLanguage;
+
+	/// <summary>
 	/// Default Language
 	/// </summary>
 	private string _defaultLanguage = SystemLanguage.English.ToString();
@@ -85,8 +90,16 @@ public class LanguageManager : ScriptableObject {
 
 		LoadLanguage(actualLanguage);
 		*/
-
+		_actualLanguage = _defaultLanguage;
 		LoadLanguage (_defaultLanguage);
+	}
+
+	/// <summary>
+	/// Get the actual language selected
+	/// </summary>
+	/// <returns>The actual languages' name</returns>
+	public string GetActualLanguage() {
+		return _actualLanguage;
 	}
 
 	/// <summary>
@@ -115,10 +128,11 @@ public class LanguageManager : ScriptableObject {
 	/// Load a language
 	/// </summary>
 	/// <param name="language">Name of language</param>
-	private void LoadLanguage(string language) {
+	public void LoadLanguage(string language) {
 		string line;
 		string[] values;
 		bool firstLine = true;
+		_actualLanguage = language;
 
 		_textTable.Clear();
 
@@ -131,13 +145,12 @@ public class LanguageManager : ScriptableObject {
 				do {
 					switch (file) {
 						case "Credits.txt":
-							line = theReader.ReadLine ();
-						break;
-						default:
 							line = theReader.ReadToEnd();
 						break;
+						default:
+							line = theReader.ReadLine ();
+						break;
 					}
-
 
 					if (line != null) {
 						if (!firstLine) {
