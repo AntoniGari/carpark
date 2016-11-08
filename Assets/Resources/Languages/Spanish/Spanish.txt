@@ -1,8 +1,0 @@
-﻿#Menus
-MenuCredits=Créditos
-MenuExit=Salir
-MenuMainMenu=Menú Principal
-MenuOptions=Opciones
-MenuPause=Pausa
-MenuRestart=Reiniciar
-MenuSelectLevel=Seleccionar Nivel

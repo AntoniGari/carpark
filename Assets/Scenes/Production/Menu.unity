@@ -2055,6 +2055,7 @@ GameObject:
   - 224: {fileID: 777827728}
   - 222: {fileID: 777827730}
   - 114: {fileID: 777827729}
+  - 114: {fileID: 777827731}
   m_Layer: 0
   m_Name: OPTIONS_LANGUAGE_SPANISH
   m_TagString: Untagged
@@ -2121,6 +2122,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 777827727}
+--- !u!114 &777827731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777827727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f113a97c4f2a63248825dcba9e93ccf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textKey: 13
 --- !u!1 &825398507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,6 +2401,7 @@ GameObject:
   - 224: {fileID: 864574853}
   - 222: {fileID: 864574855}
   - 114: {fileID: 864574854}
+  - 114: {fileID: 864574856}
   m_Layer: 0
   m_Name: OPTIONS_LANGUAGE_CATALAN
   m_TagString: Untagged
@@ -2452,6 +2466,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 864574852}
+--- !u!114 &864574856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864574852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f113a97c4f2a63248825dcba9e93ccf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textKey: 11
 --- !u!1 &946908915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,7 +3800,18 @@ MonoBehaviour:
   text: {fileID: 777827729}
   onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423712524}
+        m_MethodName: ChangeLanguage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: spanish
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &1945790630
@@ -4040,6 +4077,7 @@ GameObject:
   - 224: {fileID: 2056527328}
   - 222: {fileID: 2056527330}
   - 114: {fileID: 2056527329}
+  - 114: {fileID: 2056527331}
   m_Layer: 0
   m_Name: OPTIONS_LANGUAGE_ENGLISH
   m_TagString: Untagged
@@ -4104,6 +4142,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2056527327}
+--- !u!114 &2056527331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2056527327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f113a97c4f2a63248825dcba9e93ccf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textKey: 12
 --- !u!1 &2141496348
 GameObject:
   m_ObjectHideFlags: 0
