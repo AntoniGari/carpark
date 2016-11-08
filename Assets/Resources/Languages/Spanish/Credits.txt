@@ -1,0 +1,56 @@
+<color=#ffb400>CARPARK VR</color>
+
+
+<color=#ffb400>DICHOTOMY GAMES</color>
+
+
+<color=#fdd930>DISSENY DE JOC</color>
+Antoni Garí Romagosa
+
+
+<color=#fdd930>PROGRAMACIÓ</color>
+Antoni Garí Romagosa
+
+
+<color=#fdd930>DISSENY</color>
+Sergi Mondejar Marín
+
+
+<color=#fdd930>PROVES DE JOC</color>
+Persona_0
+Persona_1
+Persona_2
+Persona_3
+
+
+<color=#fdd930>TRADUCTORS</color>
+<color=#fdd930>Versió en Català</color>
+Antoni Garí
+
+<color=#fdd930>Versió en Anglès</color>
+Antoni Garí
+
+<color=#fdd930>Versió en Castellà</color>
+Antoni Garí
+
+<color=#fdd930>Altres traduccions</color>
+Si quieres participar en la realización de una traducción envia-nos un correo a dichotomygames@gmail.com i nos pondremos en en contacto.
+
+
+<color=#fdd930>AGRAIMENTS ESPECIALS</color>
+A toda nuestra familia y amigos: Muchas gracias por vuestro amor y apoyo durante el desarrollo de Carpark. Vuestra paciencia y comprensión ha hecho esto possible. Os queremos!
+
+Para nuestros jugadores: Muchas gracias por vuestra pasión y entusiasmo. Vosostros nos empujais hacia adelante y nos inspirais. Todo esto no seria possible sin vosotros!
+
+
+
+
+
+Este programa se creó usando Unity 5.x. Partes de este programa son © 2005-2016 Unity Technologies
+
+Google VR es una marca comercial de Google registrada en la Oficina de Patentes y Marcas de Estados Unidos, y puede estar registrada en determinadas jurisdicciones.
+
+XCode es una marca comercial de Apple Inc. registrada en la Oficina de Patentes y Marcas de Estados Unidos, y puede estar registrada en determinadas jurisdicciones.
+
+
+CARPARK: 2016-2017 Dichotomy Games.

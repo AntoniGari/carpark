@@ -1,28 +1,43 @@
 <color=#fdd930>CARPARK VR</color>
 
+
 <color=#fdd930>DICHOTOMY GAMES</color>
+
 
 <color=#ffb400>GAME DESIGN</color>
 Antoni Garí Romagosa
 
+
 <color=#ffb400>PROGRAMMING</color>
 Antoni Garí Romagosa
+
 
 <color=#ffb400>DESIGNERS</color>
 Sergi Mondejar Marín
 
+
 <color=#ffb400>GAME TESTING</color>
+Person_0
+Person_1
+Person_2
+Person_3
+
 
 <color=#fdd929>TRANSLATORS</color>
-<color=#fdd929>Example</color>
+<color=#fdd929>Catalan Version</color>
+Antoni Garí
+
+<color=#fdd929>English Version</color>
+Antoni Garí
+
+<color=#fdd929>Spanish Version</color>
+Antoni Garí
+
+<color=#fdd929>Others translations</color>
+If you want to participate in making a translation, send us a mail to dichotomygames@gmail.com and we will get in touch.
+
 
 <color=#ffb400>VERY SPECIAL THANKS</color>
-
-
-
-
-
-
 To all our family and friends: Thank you so much for your love and support during the development of Carpark. Your patience and understanding make it all possible. We love you!
 
 To our players: Thank you for your passion and enthusiasm. You continue to push us forward and inspire us. We couldn’t do it without you!
@@ -31,11 +46,11 @@ To our players: Thank you for your passion and enthusiasm. You continue to push 
 
 
 
-Este programa se creó usando Unity 5.x. Partes de este programa son © 2005-2013 Unity Technologies
+This program was created using Unity 5.x.  Portions of this program © 2005-2016 Unity Technologies
 
-Google VR es una marca comercial de Google. registrada en la Oficina de Patentes y Marcas de Estados Unidos, y puede estar registrada en determinadas jurisdicciones.
+VR Google is a trademark of Google. registered in the Patent and Trademark Office of the United States and may be registered in certain jurisdictions.
 
-XCode es una marca comercial de Apple Inc. registrada en la Oficina de Patentes y Marcas de Estados Unidos, y puede estar registrada en determinadas jurisdicciones.
+XCode is a trademark of Apple Inc. registered in the Patent and Trademark Office of the United States and may be registered in certain jurisdictions.
 
 
-CARPARK: 2016 Dichotomy Games.
+CARPARK: 2016-2017 Dichotomy Games.

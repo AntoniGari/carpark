@@ -11,9 +11,10 @@ public class MainMenuEvents : MonoBehaviour {
 	#endregion
 
 	#region Options Menu GameObjects
-	public GameObject optionsLanguage;
-	public GameObject optionsSound;
+	public GameObject optionsGraphics;
 	public GameObject optionsVR;
+	public GameObject optionsSound;
+	public GameObject optionsLanguage;
 	#endregion
 
 	public GameObject backButton;
@@ -81,13 +82,14 @@ public class MainMenuEvents : MonoBehaviour {
 	/// </summary>
 	public void ReturnOptions () {
 		optionsLanguage.SetActive (false);
+		//optionsGraphics.SetActive (false);
 		//optionsSound.SetActive (false);
 		optionsVR.SetActive (false);
 		options.SetActive (true);
 	}
 	#endregion
 
-	#region Select Menus
+	#region Select Main Menu Options
 	/// <summary>
 	/// Selects the level menu.
 	/// </summary>
@@ -95,14 +97,6 @@ public class MainMenuEvents : MonoBehaviour {
 		mainMenu.SetActive (false);
 		credits.SetActive (true);
 		ShowBackButton ();
-	}
-
-	/// <summary>
-	/// Selects the language menu.
-	/// </summary>
-	public void SelectLanguageMenu () {
-		options.SetActive (false);
-		optionsLanguage.SetActive (true);
 	}
 
 	/// <summary>
@@ -121,6 +115,32 @@ public class MainMenuEvents : MonoBehaviour {
 		mainMenu.SetActive (false);
 		options.SetActive (true);
 		ShowBackButton ();
+	}
+	#endregion
+
+	#region Select Options Menu
+	/// <summary>
+	/// Selects the graphics menu.
+	/// </summary>
+	public void SelectGraphicsMenu () {
+		options.SetActive (false);
+		optionsGraphics.SetActive (true);
+	}
+
+	/// <summary>
+	/// Selects the language menu.
+	/// </summary>
+	public void SelectLanguageMenu () {
+		options.SetActive (false);
+		optionsLanguage.SetActive (true);
+	}
+
+	/// <summary>
+	/// Selects the sound menu.
+	/// </summary>
+	public void SelectSoundMenu () {
+		options.SetActive (false);
+		optionsSound.SetActive (true);
 	}
 
 	/// <summary>
