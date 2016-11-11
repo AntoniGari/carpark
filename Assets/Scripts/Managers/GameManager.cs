@@ -76,11 +76,19 @@ public class GameManager : MonoBehaviour {
 	[HideInInspector]
 	public LanguageManager languageManager;
 
+	/// <summary>
+	/// The controller manager.
+	/// </summary>
+	[HideInInspector]
+	public ControllerManager controllerManager;
+	#endregion
+
 	public void Start () {
 		//ScriptableObjects
 		languageManager = LanguageManager.Instance;
+		controllerManager = ControllerManager.Instance;
 	}
-	#endregion
+
 
 	/// <summary>
 	/// Initialize Singleton 

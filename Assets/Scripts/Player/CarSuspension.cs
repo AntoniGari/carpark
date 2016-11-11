@@ -24,7 +24,7 @@ public class CarSuspension : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//springConstant = rb.mass * 15;
+		springConstant = rb.mass * 15;
 
 		RaycastHit hit = new RaycastHit();
 		if (Physics.Raycast (transform.position, -transform.up, out hit, restLength + car.wheelRadius)) {
