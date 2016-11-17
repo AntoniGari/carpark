@@ -61,11 +61,23 @@ public class ControllerManager : ScriptableObject {
 		bool result = false;
 
 		switch (trigger) {
+		case "Forward":
+			if (RightTrigger != null)
+				result = RightTrigger.IsPressed;
+			if (Input.GetAxis ("Vertical") > 0)
+				result = true;
+			break;
 		case "RightTrigger":
 		case "Right Trigger":
 		case "RT":
 			if (RightTrigger != null)
 				result = RightTrigger.IsPressed;
+			break;
+		case "Back":
+			if (LeftTrigger != null)
+				result = LeftTrigger.IsPressed;
+			if (Input.GetAxis ("Vertical") < 0)
+				result = true;
 			break;
 		case "LeftTrigger":
 		case "Left Trigger":
@@ -73,21 +85,46 @@ public class ControllerManager : ScriptableObject {
 			if (LeftTrigger != null)
 				result = LeftTrigger.IsPressed;
 			break;
+		case "Vertical":
+			if (Input.GetAxis ("Vertical") != 0)
+				result = true;
+			break;
 		}
+
 
 		return result;
 	}
 
 	/// <summary>
-	/// Raws the value.
+	/// The Raw value.
+	/// </summary>
+	/// <returns>The value.</returns>
+	public float RawValue () {
+		float result = 0.0f;
+
+		if (IsPressed("Vertical"))
+			result = Input.GetAxis ("Vertical");
+
+		if (IsPressed("RT") || IsPressed("LT"))
+			result = RightTrigger.RawValue - LeftTrigger.RawValue;
+	
+		return result;
+	}
+
+	/// <summary>
+	/// The Raw value.
 	/// </summary>
 	/// <returns>The raw value.</returns>
 	/// <param name="trigger">Trigger.</param>
 	public float RawValue (string trigger) {
 		switch (trigger) {
 		case "RightTrigger":
+		case "Right Trigger":
+		case "RT":
 			return RightTrigger.RawValue;
 		case "LeftTrigger":
+		case "Left Trigger":
+		case "LT":
 			return LeftTrigger.RawValue;
 		default:
 			return 0.0f;
