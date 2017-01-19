@@ -96,18 +96,34 @@ public class ControllerManager : ScriptableObject {
 	}
 
 	/// <summary>
-	/// The Raw value.
+	/// The Raw value in acceleration.
 	/// </summary>
 	/// <returns>The value.</returns>
-	public float RawValue () {
+	public float RawAcceleration () {
 		float result = 0.0f;
 
 		if (IsPressed("Vertical"))
 			result = Input.GetAxis ("Vertical");
-
+		
 		if (IsPressed("RT") || IsPressed("LT"))
 			result = RightTrigger.RawValue - LeftTrigger.RawValue;
 	
+		return result;
+	}
+
+	/// <summary>
+	/// The Raw value in Rotation.
+	/// </summary>
+	/// <returns>The value.</returns>
+	public float RawRotation () {
+		float result = 0.0f;
+
+		if (IsPressed("Horitzontal"))
+			result = Input.GetAxis ("Horitzontal");
+
+		//if (IsPressed("RT") || IsPressed("LT"))
+		//	result = RightTrigger.RawValue - LeftTrigger.RawValue;
+
 		return result;
 	}
 
@@ -117,17 +133,29 @@ public class ControllerManager : ScriptableObject {
 	/// <returns>The raw value.</returns>
 	/// <param name="trigger">Trigger.</param>
 	public float RawValue (string trigger) {
+		float result = 0.0f;
+
 		switch (trigger) {
 		case "RightTrigger":
 		case "Right Trigger":
 		case "RT":
-			return RightTrigger.RawValue;
+			result = RightTrigger.RawValue;
+			break;
 		case "LeftTrigger":
 		case "Left Trigger":
 		case "LT":
-			return LeftTrigger.RawValue;
-		default:
-			return 0.0f;
+			result = LeftTrigger.RawValue;
+			break;
+		case "V":
+		case "Vertical":
+			result = Input.GetAxis ("Vertical");
+			break;
+		case "H":
+		case "Horitzontal":
+			result = Input.GetAxis ("Horitzontal");
+			break;
 		}
+
+		return result;
 	}
 }

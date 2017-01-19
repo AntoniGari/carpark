@@ -1,35 +1,36 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
 
-public class CarUserControl : MonoBehaviour {
+namespace UnityStandardAssets.Vehicles.Car {
+	[RequireComponent(typeof (CarController))]
+	public class CarUserControl : MonoBehaviour {
+		private CarController m_Car; // the car controller we want to use
+		private ControllerManager control;
 
-	private CarController car;
+		float h;
+		float v;
+		float handbrake;
 
-	private ControllerManager control;
+		private void Awake() {
+			// get the car controller
+			m_Car = GetComponent<CarController>();
+			control = ControllerManager.Instance;
+		}
 
 
-	float h;
-	float v;
-	float handbrake;
+		private void FixedUpdate() {
+			// pass the input to the car!
+			if (control.IsPressed ("Forward") || control.IsPressed ("Back")) {
+				h = control.RawRotation ();
+				v = control.RawAcceleration ();
 
-	// Use this for initialization
-	void Awake() {
-		car = GetComponent<CarController>();
-		control = ControllerManager.Instance;
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate() {
-		if (control.IsPressed ("Forward") || control.IsPressed ("Back")) {
-			Debug.Log ("Something pressed");
-
-			h = 0.0f;
-			v = control.RawValue();
-			handbrake = control.LeftTrigger.RawValue;
-
-			Debug.Log ("H: " + h + " - V: " + v + " - Handbrake: " + handbrake);
-			car.Move (h, v, v, handbrake);
+				#if !MOBILE_INPUT
+				//handbrake = control.LeftTrigger.RawValue;
+				m_Car.Move(h, v, v, handbrake);
+				#else
+				m_Car.Move(h, v, v, 0f);
+				#endif
+			}
 		}
 	}
-		
 }
