@@ -3,44 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ControlParkZone : MonoBehaviour {
+	/// <summary>
+	/// The time to check when the car is parked.
+	/// </summary>
+	public float checkingTime;
 
-	int wheels;
+	/// <summary>
+	/// The number of wheels.
+	/// </summary>
+	private int _wheels;
 
-	private IEnumerator parkTimer;
+	/// <summary>
+	/// The park timer.
+	/// </summary>
+	private IEnumerator _parkTimer;
 
 	// Use this for initialization
 	void Start () {
-		wheels = 0;
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		_wheels = 0;
+		checkingTime = 5.0f;
+		_parkTimer = ControlParkTime (checkingTime); 
 	}
 
+	/// <summary>
+	/// Raises the trigger enter event.
+	/// </summary>
+	/// <param name="col">Col.</param>
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag("Wheel")) {
-			++wheels;
-			//Debug.Log ("Wheel Enter: " + wheels);
-			if (wheels == 4)
-				Debug.Log ("Comença Coroutina");
-				parkTimer = ControlParkTime (5.0f); 
-				StartCoroutine (parkTimer);
+			++_wheels;
+			if (_wheels == 4) {
+				StartCoroutine (_parkTimer);
+			}
 		}
 	}
 
+	/// <summary>
+	/// Raises the trigger exit event.
+	/// </summary>
+	/// <param name="col">Col.</param>
 	void OnTriggerExit(Collider col) {
 		if (col.gameObject.CompareTag("Wheel")) {
-			//Debug.Log ("Wheel Exit: " + wheels);
-			if (wheels == 4) {
-				Debug.Log ("Para Coroutina");
-				StopCoroutine (parkTimer);
+			if (_wheels == 4) {
+				StopCoroutine (_parkTimer);
 			}
-			--wheels;
+			--_wheels;
 		}
 	}
 
+	/// <summary>
+	/// Controls the park time.
+	/// </summary>
+	/// <returns>The park time.</returns>
+	/// <param name="waitTime">Wait time.</param>
 	private IEnumerator ControlParkTime(float waitTime) {
 		yield return new WaitForSeconds (waitTime);
 		Debug.Log ("Aparcat!");
