@@ -32,5 +32,9 @@ namespace UnityStandardAssets.Vehicles.Car {
 				#endif
 			}
 		}
+
+		public float GetCurrentSpeed() {
+			return m_Car.CurrentSpeed;
+		}
 	}
 }
