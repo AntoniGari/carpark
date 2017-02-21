@@ -17,7 +17,7 @@ public class CarLife : MonoBehaviour {
 	}
 
 	public void ReduceLife() {
-		Debug.Log (carUserControl.GetCurrentSpeed);
+		Debug.Log ("SPEED: " + carUserControl.GetCurrentSpeed());
 		ReduceLife (1.0f);
 	}
 

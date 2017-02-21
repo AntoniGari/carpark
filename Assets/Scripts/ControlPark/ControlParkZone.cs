@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlParkZone : MonoBehaviour {
 	/// <summary>
@@ -9,22 +10,48 @@ public class ControlParkZone : MonoBehaviour {
 	public float checkingTime;
 
 	/// <summary>
+	/// The time to check when the car is parked.
+	/// </summary>
+	public float unfillingTime;
+
+	/// <summary>
+	/// The parking logo.
+	/// </summary>
+	public Image parkingLogo;
+
+	/// <summary>
 	/// The number of wheels.
 	/// </summary>
 	private int _wheels;
+
+	/// <summary>
+	/// Filles the park logo.
+	/// </summary>
+	private IEnumerator _fillingLogo;
 
 	/// <summary>
 	/// The park timer.
 	/// </summary>
 	private IEnumerator _parkTimer;
 
+	/// <summary>
+	/// Filles the park logo.
+	/// </summary>
+	private IEnumerator _unfillingLogo;
+
 	// Use this for initialization
 	void Start () {
-		_wheels = 0;
-		checkingTime = 5.0f;
-		_parkTimer = ControlParkTime (checkingTime); 
-	}
+		//Public
+		checkingTime = 6.0f;
+		unfillingTime = 1.0f;
 
+		//Private
+		_wheels = 0;
+		_parkTimer = ControlParkTime (checkingTime);
+		_fillingLogo = FillingLogo (checkingTime);
+		_unfillingLogo = null;
+	}
+	
 	/// <summary>
 	/// Raises the trigger enter event.
 	/// </summary>
@@ -34,6 +61,12 @@ public class ControlParkZone : MonoBehaviour {
 			++_wheels;
 			if (_wheels == 4) {
 				StartCoroutine (_parkTimer);
+
+				if (_unfillingLogo != null)
+					StopCoroutine (_unfillingLogo);
+				_unfillingLogo = UnfillingLogo(unfillingTime);
+
+				StartCoroutine (_fillingLogo);
 			}
 		}
 	}
@@ -46,8 +79,15 @@ public class ControlParkZone : MonoBehaviour {
 		if (col.gameObject.CompareTag("Wheel")) {
 			if (_wheels == 4) {
 				StopCoroutine (_parkTimer);
+				_parkTimer = ControlParkTime (checkingTime);
+
+				StopCoroutine (_fillingLogo);
+				_fillingLogo = FillingLogo (checkingTime);
+
+				StartCoroutine (_unfillingLogo);
 			}
 			--_wheels;
+
 		}
 	}
 
@@ -59,5 +99,38 @@ public class ControlParkZone : MonoBehaviour {
 	private IEnumerator ControlParkTime(float waitTime) {
 		yield return new WaitForSeconds (waitTime);
 		Debug.Log ("Aparcat!");
+	}
+
+	/// <summary>
+	/// Fillings the logo.
+	/// </summary>
+	/// <returns>The logo.</returns>
+	/// <param name="waitTime">Wait time.</param>
+	private IEnumerator FillingLogo(float waitTime){
+		float fillingTime = 0.0f;
+		parkingLogo.fillAmount = 0;
+
+		while (fillingTime <= waitTime) {
+			fillingTime += Time.deltaTime;
+			parkingLogo.fillAmount = fillingTime/waitTime;
+
+			yield return null;
+		}
+	}
+
+	/// <summary>
+	/// Unfillings the logo.
+	/// </summary>
+	/// <returns>The logo.</returns>
+	/// <param name="waitTime">Wait time.</param>
+	private IEnumerator UnfillingLogo(float waitTime){
+		float fillingTime = parkingLogo.fillAmount * waitTime;
+
+		while (fillingTime < waitTime) {
+			fillingTime -= Time.deltaTime;
+			parkingLogo.fillAmount = fillingTime/waitTime;
+
+			yield return null;
+		}
 	}
 }
