@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Canvas
   - Wheel
+  - Environment
+  - Wall
   layers:
   - Default
   - TransparentFX
