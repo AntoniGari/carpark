@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: carparkzone
+  m_Name: zone_shader
   m_Shader: {fileID: 4800000, guid: 4cdd2b0417b1ddf488c53423f5ed9200, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -102,7 +102,7 @@ Material:
       second: 1
     - first:
         name: _Outline
-      second: 0.005
+      second: 0.03
     - first:
         name: _Parallax
       second: 0.02
@@ -124,7 +124,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 0, b: 0, a: 1}
+      second: {r: 1, g: 0, b: 0, a: 0.5882353}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
