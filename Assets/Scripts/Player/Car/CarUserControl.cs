@@ -32,8 +32,10 @@ namespace UnityStandardAssets.Vehicles.Car
 
 			// pass the input to the car!
 			#if UNITY_IOS
-				float h = inputDevice.LeftStickX;
-				float v = inputDevice.LeftStickY;
+				var controlX = inputDevice.LeftStickX;
+				float h = controlX.Value;
+				var controlY = inputDevice.LeftStickY;
+				float v = controlY.Value;
 			#else
 				float h = CrossPlatformInputManager.GetAxis("Horizontal");
 				float v = CrossPlatformInputManager.GetAxis("Vertical");
