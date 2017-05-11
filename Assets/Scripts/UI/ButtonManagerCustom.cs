@@ -48,7 +48,10 @@ namespace InterfaceMovementCustom {
 			}
 		}
 
-
+		/// <summary>
+		/// Moves the focus to.
+		/// </summary>
+		/// <param name="newFocusedButton">New focused button.</param>
 		void MoveFocusTo( ButtonCustom newFocusedButton ) {
 			if (newFocusedButton != null) {
 				focusedButton = newFocusedButton;
