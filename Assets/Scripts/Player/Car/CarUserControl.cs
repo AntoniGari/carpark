@@ -36,6 +36,7 @@ namespace UnityStandardAssets.Vehicles.Car
 				float h = controlX.Value;
 				var controlY = inputDevice.LeftStickY;
 				float v = controlY.Value;
+				m_Car.Move(h, v, v, 0f);
 			#else
 				float h = CrossPlatformInputManager.GetAxis("Horizontal");
 				float v = CrossPlatformInputManager.GetAxis("Vertical");
