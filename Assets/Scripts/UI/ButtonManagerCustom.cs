@@ -11,6 +11,10 @@ namespace InterfaceMovementCustom {
 		void Awake() {
 			filteredDirection = new TwoAxisInputControl();
 			filteredDirection.StateThreshold = 0.5f;
+
+			#if UNITY_IOS
+			ICadeDeviceManager.Active = true;
+			#endif
 		}
 
 		void Update() {
