@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using InControl;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -10,6 +11,8 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         private CarController m_Car; // the car controller we want to use
 
+		public Text coordenadesX;
+		public Text coordenadesY;
 
         private void Awake()
         {
@@ -36,6 +39,8 @@ namespace UnityStandardAssets.Vehicles.Car
 				float h = controlX.Value;
 				var controlY = inputDevice.LeftStickY;
 				float v = controlY.Value;
+				coordenadesX = string.Format( "{0} {1}", "Left Stick X", controlX.State ? "= " + controlX.Value : "" );
+				coordenadesY = string.Format( "{0} {1}", "Left Stick Y", controlY.State ? "= " + controlY.Value : "" );
 				m_Car.Move(h, v, v, 0f);
 			#else
 				float h = CrossPlatformInputManager.GetAxis("Horizontal");
