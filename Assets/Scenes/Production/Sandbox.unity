@@ -3018,6 +3018,10 @@ Prefab:
       propertyPath: coordenadesY
       value: 
       objectReference: {fileID: 1592303165}
+    - target: {fileID: 11400022, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 1807453138}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
   m_IsPrefabParent: 0
@@ -8136,7 +8140,7 @@ MonoBehaviour:
   enableXInput: 0
   xInputUpdateRate: 0
   xInputBufferSize: 0
-  enableICade: 0
+  enableICade: 1
   customProfiles: []
 --- !u!4 &2137586123 stripped
 Transform:

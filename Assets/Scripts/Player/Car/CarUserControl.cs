@@ -14,6 +14,8 @@ namespace UnityStandardAssets.Vehicles.Car
 		public Text coordenadesX;
 		public Text coordenadesY;
 
+		public TestInputManager test; 
+
         private void Awake()
         {
             // get the car controller
@@ -30,17 +32,19 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
+			//GameManager.Instance.controllerManager.
+			//TestInputManager.
 
-			var inputDevice = InputManager.ActiveDevice;
 
 			// pass the input to the car!
 			#if UNITY_IOS
+				var inputDevice = InputManager.ActiveDevice;
 				var controlX = inputDevice.LeftStickX;
 				float h = controlX.Value;
 				var controlY = inputDevice.LeftStickY;
 				float v = controlY.Value;
-				coordenadesX = string.Format( "{0} {1}", "Left Stick X", controlX.State ? "= " + controlX.Value : "" );
-				coordenadesY = string.Format( "{0} {1}", "Left Stick Y", controlY.State ? "= " + controlY.Value : "" );
+				coordenadesX.text = string.Format( "{0} {1}", "Left Stick X", h);
+				coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y", v );
 				m_Car.Move(h, v, v, 0f);
 			#else
 				float h = CrossPlatformInputManager.GetAxis("Horizontal");

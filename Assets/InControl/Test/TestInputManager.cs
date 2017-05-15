@@ -352,6 +352,19 @@ namespace InControl
 			Gizmos.DrawLine( rz, rp );
 			Gizmos.DrawSphere( rp, 1.0f );
 		}
+
+		public float GetLeftStickX() {
+			var inputDevice = InputManager.ActiveDevice;
+			var controlX = inputDevice.LeftStickX;
+			return controlX.Value;
+		}
+
+		public float GetLeftStickY() {
+			var inputDevice = InputManager.ActiveDevice;
+			var controlY = inputDevice.LeftStickY;
+			return controlY.Value;
+		}
+
 	}
 }
 
