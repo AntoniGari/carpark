@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ControllerHelper : MonoBehaviour {
 
+	public Text name;
 	public Text coordenadesX;
 	public Text coordenadesY;
 
@@ -19,6 +20,10 @@ public class ControllerHelper : MonoBehaviour {
 
 	public float GetLeftStickX() {
 		var inputDevice = InputManager.ActiveDevice;
+
+
+		name.text = inputDevice.Name;
+
 		var controlX = inputDevice.LeftStickX;
 		coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", controlX.Value);
 
