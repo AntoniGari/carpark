@@ -10,16 +10,16 @@ namespace UnityStandardAssets.Vehicles.Car
     public class CarUserControl : MonoBehaviour
     {
         private CarController m_Car; // the car controller we want to use
+		private ControllerHelper test;
 
 		public Text coordenadesX;
 		public Text coordenadesY;
-
-		public TestInputManager test; 
 
         private void Awake()
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
+			test = GetComponent<ControllerHelper> ();
 
 			#if UNITY_IOS
 			ICadeDeviceManager.Active = true;
@@ -33,7 +33,6 @@ namespace UnityStandardAssets.Vehicles.Car
         private void FixedUpdate()
         {
 			//GameManager.Instance.controllerManager.
-			//TestInputManager.
 
 			// pass the input to the car!
 			#if UNITY_IOS
@@ -42,14 +41,12 @@ namespace UnityStandardAssets.Vehicles.Car
 				float h = controlX.Value;
 				var controlY = inputDevice.LeftStickY;
 				float v = controlY.Value;
-				coordenadesX.text = string.Format( "{0} {1}", "Left Stick X", test.GetLeftStickX());
-				coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y", test.GetLeftStickY());
+				coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", test.GetLeftStickX());
+				coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", test.GetLeftStickY());
 				m_Car.Move(h, v, v, 0f);
 			#else
 				float h = CrossPlatformInputManager.GetAxis("Horizontal");
 				float v = CrossPlatformInputManager.GetAxis("Vertical");
-				coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", test.GetLeftStickX());
-				coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", test.GetLeftStickY());
 			#endif
 
 
