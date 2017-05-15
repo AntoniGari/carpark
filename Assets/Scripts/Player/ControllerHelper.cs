@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using InControl;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using InControl;
 
 public class ControllerHelper : MonoBehaviour {
 
@@ -25,18 +23,25 @@ public class ControllerHelper : MonoBehaviour {
 	void Update() {
 		var inputDevice = InputManager.ActiveDevice;
 
-		name.text = inputDevice.Name;
+		//name.text = inputDevice.Name;
+
+		if (inputDevice.IsKnown) {
+			var control = inputDevice.LeftStickX;
+			name.text = control.Value.ToString();
+		}
 
 		var controlX = inputDevice.LeftStickX;
-		coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", controlX.Value);
 		_h = controlX.Value;
+		coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", _h);
+
 
 		var controlY = inputDevice.LeftStickY;
-		coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", controlY.Value);
 		_v = controlY.Value;
+		coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", _v);
+
 	}
 
-
+	/*
 	public float GetLeftStickX() {
 		var inputDevice = InputManager.ActiveDevice;
 
@@ -54,4 +59,5 @@ public class ControllerHelper : MonoBehaviour {
 		coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", controlY.Value);
 		return controlY.Value;
 	}
+	*/
 }
