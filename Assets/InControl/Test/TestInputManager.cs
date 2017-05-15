@@ -18,6 +18,7 @@ using InControl;
  * It can also be used for create new device profiles as it will
  * show the default Unity mappings for unknown devices.
  **/
+using UnityEngine.UI;
 
 
 namespace InControl
@@ -25,6 +26,11 @@ namespace InControl
 	public class TestInputManager : MonoBehaviour
 	{
 		public Font font;
+
+		public Text coordenadesX;
+		public Text coordenadesY;
+
+
 
 		GUIStyle style = new GUIStyle();
 		List<LogMessage> logMessages = new List<LogMessage>();
@@ -356,12 +362,15 @@ namespace InControl
 		public float GetLeftStickX() {
 			var inputDevice = InputManager.ActiveDevice;
 			var controlX = inputDevice.LeftStickX;
+			coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", controlX.Value);
+
 			return controlX.Value;
 		}
 
 		public float GetLeftStickY() {
 			var inputDevice = InputManager.ActiveDevice;
 			var controlY = inputDevice.LeftStickY;
+			coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", controlY.Value);
 			return controlY.Value;
 		}
 
