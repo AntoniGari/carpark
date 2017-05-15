@@ -19,7 +19,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
-			test = GetComponent<ControllerHelper> ();
+			//test = GetComponent<ControllerHelper> ();
 
 			#if UNITY_IOS
 			ICadeDeviceManager.Active = true;
@@ -41,8 +41,8 @@ namespace UnityStandardAssets.Vehicles.Car
 				float h = controlX.Value;
 				var controlY = inputDevice.LeftStickY;
 				float v = controlY.Value;
-				coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", test.GetLeftStickX());
-				coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", test.GetLeftStickY());
+				//coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", test.GetLeftStickX());
+				//coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", test.GetLeftStickY());
 				m_Car.Move(h, v, v, 0f);
 			#else
 				float h = CrossPlatformInputManager.GetAxis("Horizontal");
