@@ -14,7 +14,8 @@ namespace UnityStandardAssets.Vehicles.Car
 		public Text coordenadesX;
 		public Text coordenadesY;
 
-		TwoAxisInputControl filteredDirection;
+		TwoAxisInputControl filteredDirectionH;
+		TwoAxisInputControl filteredDirectionV;
 
         private void Awake()
         {
@@ -26,37 +27,55 @@ namespace UnityStandardAssets.Vehicles.Car
 			#endif
 
 			//NEW
-			filteredDirection = new TwoAxisInputControl();
-			filteredDirection.StateThreshold = 0.5f;
+			filteredDirectionH = new TwoAxisInputControl();
+			filteredDirectionH.StateThreshold = 0.5f;
+
+			filteredDirectionV = new TwoAxisInputControl();
+			filteredDirectionV.StateThreshold = 0.5f;
         }
 
 
-        private void FixedUpdate()
+        //private void FixedUpdate()
+		private void Update()
         {
-			
+
+			/*var inputDevice = InputManager.ActiveDevice;
+			filteredDirectionV.Filter (inputDevice.LeftStickRight, Time.deltaTime);
+			filteredDirectionV.X
+
+			filteredDirectionH.Right.WasPressed */
+
 			// pass the input to the car!
 			#if UNITY_IOS
 			var inputDevice = InputManager.ActiveDevice;
-			filteredDirection.Filter (inputDevice.Direction, Time.deltaTime);
+			filteredDirectionH.Filter (inputDevice.Direction, Time.deltaTime);
+			filteredDirectionV.Filter (inputDevice.LeftStickRight, Time.deltaTime);
 
-			float h;
-			float v;
+			float h = 0.0f;
+			float v = 0.0f;
 
 
-			if (filteredDirection.Up.WasPressed || filteredDirection.Up.WasRepeated) {
+			/*if (filteredDirection.Up.WasPressed || filteredDirection.Up.WasRepeated) {
 				v = 1.0f;
 			} else if (filteredDirection.Down.WasPressed || filteredDirection.Down.WasReleased) {
 				v = -1.0f;
-			} else {
-				v = 0.0f;
 			}
+			*/
 
-			if (filteredDirection.Right.WasPressed || filteredDirection.Right.WasReleased) {
+			/*
+			if (filteredDirection.Up.WasPressed || filteredDirection.Up.WasRepeated) {
+			v = 1.0f;
+			} else if (filteredDirection.Down.WasPressed || filteredDirection.Down.WasReleased) {
+			v = -1.0f;
+			}
+			*/
+			v = filteredDirectionH.Y;
+
+
+			if (filteredDirectionH.Right.WasPressed || filteredDirectionH.Right.WasReleased) {
 				h = 1.0f;
-			} else if (filteredDirection.Left.WasPressed || filteredDirection.Left.WasReleased) {
+			} else if (filteredDirectionH.Left.WasPressed || filteredDirectionH.Left.WasReleased) {
 				h = -1.0f;
-			} else {
-				h = 0.0f;
 			}
 
 			coordenadesY.text = v.ToString ();
