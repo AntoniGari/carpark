@@ -11,9 +11,9 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         private CarController m_Car; // the car controller we want to use
 
-		public Text coordenadesX;
-		public Text coordenadesY;
-
+		/// <summary>
+		/// The filtered direction.
+		/// </summary>
 		TwoAxisInputControl filteredDirection;
 
         private void Awake()
@@ -25,7 +25,6 @@ namespace UnityStandardAssets.Vehicles.Car
 			ICadeDeviceManager.Active = true;
 			#endif
 
-			//NEW
 			filteredDirection = new TwoAxisInputControl();
 			filteredDirection.StateThreshold = 0.5f;
         }
@@ -40,11 +39,8 @@ namespace UnityStandardAssets.Vehicles.Car
 			var inputDevice = InputManager.ActiveDevice;
 			filteredDirection.Filter (inputDevice.Direction, Time.deltaTime);
 
-			float h = filteredDirection.Y;
-			float v = filteredDirection.X;
-
-			coordenadesY.text = v.ToString ();
-			coordenadesX.text = h.ToString ();
+			float h = filteredDirection.X;
+			float v = filteredDirection.Y;
 			#else
 			float h = CrossPlatformInputManager.GetAxis("Horizontal");
 			float v = CrossPlatformInputManager.GetAxis("Vertical");
