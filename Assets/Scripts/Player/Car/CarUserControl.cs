@@ -14,8 +14,7 @@ namespace UnityStandardAssets.Vehicles.Car
 		public Text coordenadesX;
 		public Text coordenadesY;
 
-		TwoAxisInputControl filteredDirectionH;
-		TwoAxisInputControl filteredDirectionV;
+		TwoAxisInputControl filteredDirection;
 
         private void Awake()
         {
@@ -27,11 +26,8 @@ namespace UnityStandardAssets.Vehicles.Car
 			#endif
 
 			//NEW
-			filteredDirectionH = new TwoAxisInputControl();
-			filteredDirectionH.StateThreshold = 0.5f;
-
-			filteredDirectionV = new TwoAxisInputControl();
-			filteredDirectionV.StateThreshold = 0.5f;
+			filteredDirection = new TwoAxisInputControl();
+			filteredDirection.StateThreshold = 0.5f;
         }
 
 
@@ -39,44 +35,13 @@ namespace UnityStandardAssets.Vehicles.Car
 		private void Update()
         {
 
-			/*var inputDevice = InputManager.ActiveDevice;
-			filteredDirectionV.Filter (inputDevice.LeftStickRight, Time.deltaTime);
-			filteredDirectionV.X
-
-			filteredDirectionH.Right.WasPressed */
-
 			// pass the input to the car!
 			#if UNITY_IOS
 			var inputDevice = InputManager.ActiveDevice;
-			filteredDirectionH.Filter (inputDevice.Direction, Time.deltaTime);
-			filteredDirectionV.Filter (inputDevice.LeftStickRight, Time.deltaTime);
+			filteredDirection.Filter (inputDevice.Direction, Time.deltaTime);
 
-			float h = 0.0f;
-			float v = 0.0f;
-
-
-			/*if (filteredDirection.Up.WasPressed || filteredDirection.Up.WasRepeated) {
-				v = 1.0f;
-			} else if (filteredDirection.Down.WasPressed || filteredDirection.Down.WasReleased) {
-				v = -1.0f;
-			}
-			*/
-
-			/*
-			if (filteredDirection.Up.WasPressed || filteredDirection.Up.WasRepeated) {
-			v = 1.0f;
-			} else if (filteredDirection.Down.WasPressed || filteredDirection.Down.WasReleased) {
-			v = -1.0f;
-			}
-			*/
-			v = filteredDirectionH.Y;
-
-
-			if (filteredDirectionH.Right.WasPressed || filteredDirectionH.Right.WasReleased) {
-				h = 1.0f;
-			} else if (filteredDirectionH.Left.WasPressed || filteredDirectionH.Left.WasReleased) {
-				h = -1.0f;
-			}
+			float h = filteredDirection.Y;
+			float v = filteredDirection.X;
 
 			coordenadesY.text = v.ToString ();
 			coordenadesX.text = h.ToString ();
