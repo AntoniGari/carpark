@@ -115,6 +115,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Gets the level.
+	/// </summary>
+	/// <returns>The level.</returns>
+	public int GetLevelNumber() {
+		return (int)sceneLevel;
+	}
+
+	/// <summary>
 	/// Gets the state.
 	/// </summary>
 	/// <returns>The state.</returns>
