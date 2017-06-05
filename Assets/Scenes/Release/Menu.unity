@@ -1415,7 +1415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &248758279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2531,7 +2531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CATALAN
+  m_Text: OPTIONS_VR_RECENTER
 --- !u!114 &388705060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,9 +2742,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SPANISH
-
-'
+  m_Text: OPTIONS_VR_DISTORTION
 --- !u!114 &401191481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5335,7 +5333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &766335705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7380,7 +7378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1201938655
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7431,7 +7429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v.0.01.001
+  m_Text: v.0.05.001
 --- !u!222 &1201938657
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8824,7 +8822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1496653998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11074,7 +11072,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ENGLISH
+  m_Text: OPTIONS_VR_MODE
 --- !u!114 &1937709887
 MonoBehaviour:
   m_ObjectHideFlags: 0

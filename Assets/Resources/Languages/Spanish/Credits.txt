@@ -4,43 +4,50 @@
 <color=#ffb400>DICHOTOMY GAMES</color>
 
 
-<color=#fdd930>DISSENY DE JOC</color>
+<color=#fdd930>DISEÑO DE JUEGO</color>
 Antoni Garí Romagosa
 
 
-<color=#fdd930>PROGRAMACIÓ</color>
+<color=#fdd930>PROGRAMACIÓN</color>
 Antoni Garí Romagosa
 
 
-<color=#fdd930>DISSENY</color>
-Sergi Mondejar Marín
+<color=#fdd930>DISEÑO</color>
+Brokenvector
+G.E.TeamDev
+Razrushitel34
 
 
-<color=#fdd930>PROVES DE JOC</color>
-Persona_0
-Persona_1
-Persona_2
-Persona_3
+<color=#fdd930>PRUEBAS DE JUEGO</color>
+Joan Segovia
+Jofre Tremps
+Marc Esplugas
+Ricard Figueras
 
 
-<color=#fdd930>TRADUCTORS</color>
-<color=#fdd930>Versió en Català</color>
+<color=#fdd930>TRADUCTORES</color>
+<color=#fdd930>Versión en Catalàn</color>
 Antoni Garí
 
-<color=#fdd930>Versió en Anglès</color>
+<color=#fdd929>Versión en Alemán</color>
+Alita Molina
+
+<color=#fdd930>Versión en Inglés</color>
 Antoni Garí
 
-<color=#fdd930>Versió en Castellà</color>
+<color=#fdd930>Versión en Castellano</color>
 Antoni Garí
 
-<color=#fdd930>Altres traduccions</color>
-Si quieres participar en la realización de una traducción envia-nos un correo a dichotomygames@gmail.com i nos pondremos en en contacto.
+<color=#fdd930>Otras traducciones</color>
+Si quieres participar en la realización de una traducción envianos un correo a dichotomygames@gmail.com y me pondré en contacto contigo.
 
 
-<color=#fdd930>AGRAIMENTS ESPECIALS</color>
-A toda nuestra familia y amigos: Muchas gracias por vuestro amor y apoyo durante el desarrollo de Carpark. Vuestra paciencia y comprensión ha hecho esto possible. Os queremos!
+<color=#fdd930>AGRADECIMIENTOS ESPECIALES</color>
+A toda mi familia y amigos: Muchas gracias por vuestro amor y apoyo durante el desarrollo de Carpark. Vuestra paciencia y comprensión ha hecho esto possible. Os quiero!
 
-Para nuestros jugadores: Muchas gracias por vuestra pasión y entusiasmo. Vosostros nos empujais hacia adelante y nos inspirais. Todo esto no seria possible sin vosotros!
+Para mis jugadores: Muchas gracias por vuestra pasión y entusiasmo. Vosostros me empujais hacia adelante y me inspirais. Todo esto no seria possible sin vosotros!
+
+También una mención a las personas que he conocido a lo largo del desarrollo de Carpark. Os habéis cruzado por mi vida algunos para quedaros, otros solo de paso. Pero en el fondo formáis parte de mi vida. Un abrazo!
 
 
 

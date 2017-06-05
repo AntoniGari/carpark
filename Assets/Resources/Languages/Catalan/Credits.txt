@@ -13,19 +13,24 @@ Antoni Garí Romagosa
 
 
 <color=#fdd930>DISSENY</color>
-Sergi Mondejar Marín
+Brokenvector
+G.E.TeamDev
+Razrushitel34
 
 
 <color=#fdd930>PROVES DE JOC</color>
-Persona_0
-Persona_1
-Persona_2
-Persona_3
+Joan Segovia
+Jofre Tremps
+Marc Esplugas
+Ricard Figueras
 
 
 <color=#fdd930>TRADUCTORS</color>
 <color=#fdd930>Versió en Català</color>
 Antoni Garí
+
+<color=#fdd929>Versió en Alemany</color>
+Alita Molina
 
 <color=#fdd930>Versió en Anglès</color>
 Antoni Garí
@@ -34,13 +39,15 @@ Antoni Garí
 Antoni Garí
 
 <color=#fdd930>Altres traduccions</color>
-Si vols participar en fer una traducció envia un correu a dichotomygames@gmail.com i ens posarem en contacte.
+Si vols participar en fer una traducció envia un correu a dichotomygames@gmail.com i em posare en contacte amb tu.
 
 
 <color=#fdd930>AGRAIMENTS ESPECIALS</color>
-A tota la nostra familia i amics: Moltes gracies pel vostre amor i suport durant el desenvolupament de Carpark. La vostra paciencia i comprensió ha fet això possible. Us estime'm!
+A tota la meva familia i amics: Moltes gracies pel vostre amor i suport durant el desenvolupament de Carpark. La vostra paciencia i comprensió ha fet això possible. Us estimo!
 
-Pels nostres jugadors: Moltes gracies per la vostra passió i entusiasme. Vosaltres ens empenyeu endavant i ens inspireu. Tot això no podria ser possible sense vosaltres!
+Pels meus jugadors: Moltes gracies per la vostra passió i entusiasme. Vosaltres m'heu empés endavant i m'heu inspirat. Tot això no podria ser possible sense vosaltres!
+
+Tambén una menció a les persones que he conegut durant el desenvolupament de Carpark. Us heu creuat per la meva vida alguns per quedar-vos, d'altres només de pas. Però en el fons formeu part de la meva vida. Un abraçada!
 
 
 

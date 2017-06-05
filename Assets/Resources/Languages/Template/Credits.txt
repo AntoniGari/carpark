@@ -13,14 +13,16 @@ Antoni Garí Romagosa
 
 
 <color=#ffb400>DESIGNERS</color>
-Sergi Mondejar Marín
+Brokenvector
+G.E.TeamDev
+Razrushitel34
 
 
 <color=#ffb400>GAME TESTING</color>
-Person_0
-Person_1
-Person_2
-Person_3
+Joan Segovia
+Jofre Tremps
+Marc Esplugas
+Ricard Figueras
 
 
 <color=#fdd929>TRANSLATORS</color>
@@ -30,17 +32,22 @@ Antoni Garí
 <color=#fdd929>English Version</color>
 Antoni Garí
 
+<color=#fdd929>German Version</color>
+Alita Molina
+
 <color=#fdd929>Spanish Version</color>
 Antoni Garí
 
 <color=#fdd929>Others translations</color>
-If you want to participate in making a translation, send us a mail to dichotomygames@gmail.com and we will get in touch.
+If you want to participate in making a translation, send me a mail to dichotomygames@gmail.com and we will get in touch.
 
 
 <color=#ffb400>VERY SPECIAL THANKS</color>
 To all our family and friends: Thank you so much for your love and support during the development of Carpark. Your patience and understanding make it all possible. We love you!
 
 To our players: Thank you for your passion and enthusiasm. You continue to push us forward and inspire us. We couldn’t do it without you!
+
+Also, a mention for people I have met throughout the Carpark development. You have crossed my life someone to stay it, others just passing. Instead of you're now a part of my life. A big hug! 
 
 
 
