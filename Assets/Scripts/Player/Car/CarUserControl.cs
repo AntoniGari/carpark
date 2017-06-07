@@ -16,8 +16,7 @@ namespace UnityStandardAssets.Vehicles.Car
 		/// </summary>
 		TwoAxisInputControl filteredDirection;
 
-        private void Awake()
-        {
+        private void Awake() {
             // get the car controller
             m_Car = GetComponent<CarController>();
 
@@ -31,8 +30,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
 
         //private void FixedUpdate()
-		private void Update()
-        {
+		private void Update() {
 
 			// pass the input to the car!
 			#if UNITY_IOS
@@ -53,8 +51,13 @@ namespace UnityStandardAssets.Vehicles.Car
 			#else
 			m_Car.Move(h, v, v, 0f);
 			#endif
-
-
         }
+
+		/// <summary>
+		/// Start a Car desacceleration.
+		/// </summary>
+		public void Brake () {
+			m_Car.Move(0, 0, 0, 1.0f);
+		}
     }
 }

@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using InControl;
+using UnityStandardAssets.Vehicles.Car;
 
 public class InGameMenu : MonoBehaviour {
 	/// <summary>
 	/// The events.
 	/// </summary>
 	private InGameMenuEvents events;
+
+	/// <summary>
+	/// The car controller.
+	/// </summary>
+	private CarUserControl carControl;
 
 	/// <summary>
 	/// Back selection.
@@ -29,6 +35,7 @@ public class InGameMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		events = GameObject.FindGameObjectWithTag("Canvas").GetComponent<InGameMenuEvents> ();
+		carControl = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarUserControl> ();
 		_change_event = true;
 	}
 
@@ -40,9 +47,12 @@ public class InGameMenu : MonoBehaviour {
 			switch (selection) {
 			case InGameMenuSelection.IN_GAME_MENU_OPEN_CLOSE_MENU:
 				if (_change_event) {
+					carControl.Brake ();
+					carControl.enabled = false;
 					events.OpenInGameMenu ();
 				} else {
 					events.CloseInGameMenu ();
+					carControl.enabled = true;
 				}
 				_change_event = !_change_event;
 				return;
