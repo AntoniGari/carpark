@@ -8,6 +8,8 @@ TagManager:
   - Wheel
   - Environment
   - Wall
+  - HealthText
+  - WastedUI
   layers:
   - Default
   - TransparentFX

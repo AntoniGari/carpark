@@ -1,22 +1,72 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 
 public class CarDamage : MonoBehaviour {
 	/// <summary>
+	/// The car controller.
+	/// </summary>
+	private CarUserControl carControl;
+
+	/// <summary>
 	/// The car health.
 	/// </summary>
-	public float carHealth;
+	private float carHealth;
 
-	//private CarUserControl carUserControl;
-	//private CarController m_Car;
+	/// <summary>
+	/// The max car health.
+	/// </summary>
+	public float carHealthMax;
+
+	/// <summary>
+	/// The health text.
+	/// </summary>
+	private Text healthText;
+
+	/// <summary>
+	/// The parts per unit.
+	/// </summary>
+	private float partsPerUnit;
+
+	/// <summary>
+	/// The wasted image.
+	/// </summary>
+	private Image wastedImage;
+
+	void Start () {
+		carHealth = carHealthMax;
+		partsPerUnit = 1 / carHealthMax;
+	
+		carControl = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarUserControl> ();
+		healthText = GameObject.FindGameObjectWithTag ("HealthText").GetComponent<Text>();
+		wastedImage = GameObject.FindGameObjectWithTag ("WastedUI").GetComponent<Image>();
+
+		ChangeHealthText();
+	}
+
+	/// <summary>
+	/// Changes the health text.
+	/// </summary>
+	public void ChangeHealthText() {
+		float aux = 1 - (partsPerUnit * carHealth);
+		Color color = new Color (0 + aux, 1 - aux, 0, 1);
+		healthText.color = color;
+
+		if (carHealth >= 0) {
+			healthText.text = carHealth.ToString();
+		}
+	}
 
 	/// <summary>
 	/// Checks the life.
 	/// </summary>
 	public void CheckLife() {
 		if (carHealth <= 0.0f) {
-			Debug.Log ("COTXE MORT");
+			carControl.Brake ();
+			carControl.enabled = false;
+			wastedImage.color = Color.white;
 		}
 	}
 
@@ -35,9 +85,8 @@ public class CarDamage : MonoBehaviour {
 		switch (col.gameObject.tag) {
 		case "Environment":
 		case "Wall":
-			Debug.Log ("ACCIDENT");
 			ReduceLife (50.0f);
-			break;
+		break;
 		} 
 	}
 
@@ -56,6 +105,9 @@ public class CarDamage : MonoBehaviour {
 	/// <param name="reduction">Reduction.</param>
 	public void ReduceLife(float reduction) {
 		carHealth -= reduction;
+		if (carHealth < 0)
+			carHealth = 0;
+		ChangeHealthText();
 		CheckLife ();
 	}
 }
