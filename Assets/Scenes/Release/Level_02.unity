@@ -5218,7 +5218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuLose: {fileID: 2123457415}
-  carHealthMax: 100
+  carHealthMax: 50
 --- !u!65 &577173591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15777,7 +15777,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 02f14252084410b498cfaed577531db4, type: 2}
+  - {fileID: 2100000, guid: 65869f355c6f2a241b0cb4ec7b770fa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17619,7 +17619,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 02f14252084410b498cfaed577531db4, type: 2}
+  - {fileID: 2100000, guid: 65869f355c6f2a241b0cb4ec7b770fa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
