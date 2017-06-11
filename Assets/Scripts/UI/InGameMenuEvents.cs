@@ -27,10 +27,18 @@ public class InGameMenuEvents : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Change to the next level.
+	/// </summary>
+	public void NextLevel() {
+		GameManager.Instance.SetNextLevel ();
+	}
+
+	/// <summary>
 	/// Restarts the level.
 	/// </summary>
 	public void RestartLevel() {
-		GameManager.Instance.SetLevel ((GameManager.SceneLevel) GameManager.Instance.GetLevelNumber());
+		//GameManager.Instance.SetLevel ((GameManager.SceneLevel) GameManager.Instance.GetLevelNumber());
+		GameManager.Instance.RestartLevel();
 	}
 
 	/// <summary>

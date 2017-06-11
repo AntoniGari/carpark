@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour {
 		LEVEL_4,
 		LEVEL_5,
 		LEVEL_6,
-		LEVEL_7
+		LEVEL_7,
+		LEVEL_SIZE
 	};
 	#endregion
 
@@ -131,6 +132,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Restarts the level.
+	/// </summary>
+	public void RestartLevel() {
+		AudioManager.Instance.StopFX ();
+		SceneManager.LoadScene((int)sceneLevel);
+		SetState (GameState.STATE_INIT_LEVEL);
+	}
+
+	/// <summary>
 	/// Sets the level.
 	/// </summary>
 	/// <param name="newLevel">New level.</param>
@@ -138,6 +148,22 @@ public class GameManager : MonoBehaviour {
 		sceneLevel = newLevel;
 		AudioManager.Instance.StopFX ();
 		SceneManager.LoadScene((int)sceneLevel);
+		SetState (GameState.STATE_INIT_LEVEL);
+	}
+
+	/// <summary>
+	/// Sets the next level.
+	/// </summary>
+	public void SetNextLevel() {
+		int nextLevel = GetLevelNumber () + 1;
+		sceneLevel = (SceneLevel)nextLevel;
+
+		AudioManager.Instance.StopFX ();
+		if (nextLevel < (int)SceneLevel.LEVEL_SIZE) {
+			SceneManager.LoadScene((int)sceneLevel);
+		} else {
+			SceneManager.LoadScene (0);
+		}
 		SetState (GameState.STATE_INIT_LEVEL);
 	}
 

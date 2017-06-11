@@ -10,6 +10,8 @@ TagManager:
   - Wall
   - HealthText
   - WastedUI
+  - Terrain
+  - WastedParticles
   layers:
   - Default
   - TransparentFX

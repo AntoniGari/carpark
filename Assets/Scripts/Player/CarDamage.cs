@@ -6,6 +6,11 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class CarDamage : MonoBehaviour {
 	/// <summary>
+	/// The lose main menu window.
+	/// </summary>
+	public GameObject mainMenuLose;
+
+	/// <summary>
 	/// The car controller.
 	/// </summary>
 	private CarUserControl carControl;
@@ -35,6 +40,11 @@ public class CarDamage : MonoBehaviour {
 	/// </summary>
 	private Image wastedImage;
 
+	/// <summary>
+	/// The wasted particles.
+	/// </summary>
+	private ParticleSystem wastedParticle;
+
 	void Start () {
 		carHealth = carHealthMax;
 		partsPerUnit = 1 / carHealthMax;
@@ -42,6 +52,7 @@ public class CarDamage : MonoBehaviour {
 		carControl = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarUserControl> ();
 		healthText = GameObject.FindGameObjectWithTag ("HealthText").GetComponent<Text>();
 		wastedImage = GameObject.FindGameObjectWithTag ("WastedUI").GetComponent<Image>();
+		wastedParticle = GameObject.FindGameObjectWithTag ("WastedParticles").GetComponent<ParticleSystem>();
 
 		ChangeHealthText();
 	}
@@ -64,9 +75,11 @@ public class CarDamage : MonoBehaviour {
 	/// </summary>
 	public void CheckLife() {
 		if (carHealth <= 0.0f) {
+			wastedParticle.Play();
 			carControl.Brake ();
 			carControl.enabled = false;
 			wastedImage.color = Color.white;
+			mainMenuLose.SetActive (true);
 		}
 	}
 
@@ -85,7 +98,7 @@ public class CarDamage : MonoBehaviour {
 		switch (col.gameObject.tag) {
 		case "Environment":
 		case "Wall":
-			ReduceLife (50.0f);
+			ReduceLife (1.0f);
 		break;
 		} 
 	}

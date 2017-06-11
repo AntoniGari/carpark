@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 
 public class ControlParkZone : MonoBehaviour {
 	/// <summary>
@@ -18,6 +19,16 @@ public class ControlParkZone : MonoBehaviour {
 	/// The parking logo.
 	/// </summary>
 	public Image parkingLogo;
+
+	/// <summary>
+	/// The win main menu window.
+	/// </summary>
+	public GameObject mainMenuWin;
+
+	/// <summary>
+	/// The car controller.
+	/// </summary>
+	private CarUserControl carControl;
 
 	/// <summary>
 	/// The number of wheels.
@@ -50,6 +61,7 @@ public class ControlParkZone : MonoBehaviour {
 		_parkTimer = ControlParkTime (checkingTime);
 		_fillingLogo = FillingLogo (checkingTime);
 		_unfillingLogo = null;
+		carControl = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarUserControl> ();
 	}
 	
 	/// <summary>
@@ -98,7 +110,9 @@ public class ControlParkZone : MonoBehaviour {
 	/// <param name="waitTime">Wait time.</param>
 	private IEnumerator ControlParkTime(float waitTime) {
 		yield return new WaitForSeconds (waitTime);
-		Debug.Log ("Aparcat!");
+		carControl.Brake ();
+		carControl.enabled = false;
+		mainMenuWin.SetActive (true);
 	}
 
 	/// <summary>
