@@ -34,7 +34,7 @@ public class ControllerManager : ScriptableObject {
 
 	public void Awake() {
 		foreach (var inputDevice in InputManager.Devices) {
-			bool active = InputManager.ActiveDevice == inputDevice;
+			//bool active = InputManager.ActiveDevice == inputDevice;
 			foreach (var control in inputDevice.Controls) {
 				if (control != null) {
 					if (inputDevice.IsKnown) {
