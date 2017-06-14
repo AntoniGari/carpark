@@ -22,11 +22,6 @@ public class MusicManager : MonoBehaviour {
 	private AudioSource _musicSource;
 
 	/// <summary>
-	/// The music volume.
-	/// </summary>
-	private float _musicVolume;
-
-	/// <summary>
 	/// Gets the instance.
 	/// </summary>
 	/// <value>The instance.</value>
@@ -45,7 +40,23 @@ public class MusicManager : MonoBehaviour {
 	/// Initializes a new instance of the <see cref="MusicManager"/> class.
 	/// </summary>
 	private MusicManager(){
-		_musicVolume = 1;
+		//GetCameraSource ();
+	}
+
+	public void Awake() {
+		_musicSource = Camera.main.GetComponent<AudioSource> ();
+	}
+
+	/// <summary>
+	/// Decreases the FX volume.
+	/// </summary>
+	public void DecreaseVolume(){
+		Debug.Log ("DECREASE MUSIC");
+		_musicSource.Stop();
+		/*
+		if (_musicSource.volume > 0.0f)
+			_musicSource.volume -= 0.1f;
+		*/
 	}
 
 	/// <summary>
@@ -76,8 +87,12 @@ public class MusicManager : MonoBehaviour {
 	/// Gets the camera source.
 	/// </summary>
 	public void GetCameraSource(){
-		_musicSource = ComponentManager.camera.GetCameraAudioSource();
-		_musicSource.volume = _musicVolume;
+		Debug.Log("GetCameraSource");
+		//_musicSource = ComponentManager.camera.GetCameraAudioSource();
+		//_musicSource = Camera.main.GetComponent<AudioSource> ();
+		//_musicSource = Camera.main.transform.GetComponent<AudioSource> ();
+		Debug.Log("Not Getting");
+		_musicSource.volume = 1.0f;
 		_musicSource.loop = true;
 	}
 
@@ -86,8 +101,17 @@ public class MusicManager : MonoBehaviour {
 	/// </summary>
 	/// <returns>The music volume.</returns>
 	public float GetMusicVolume(){
-		return 	_musicVolume;
+		return 	_musicSource.volume;
 	}
+
+	/// <summary>
+	/// Increases the Music volume.
+	/// </summary>
+	public void IncreaseVolume(){
+		if (_musicSource.volume < 1.0f)
+			_musicSource.volume += 0.1f;
+	}
+
 
 	/// <summary>
 	/// Determines whether this instance is playing.
@@ -135,8 +159,7 @@ public class MusicManager : MonoBehaviour {
 	/// <param name="volume">Volume.</param>
 	public void SetMusicVolume(float volume){
 		GetCameraSource ();
-		_musicVolume = volume;
-		_musicSource.volume = _musicVolume;
+		_musicSource.volume = volume;
 	}
 
 	/// <summary>

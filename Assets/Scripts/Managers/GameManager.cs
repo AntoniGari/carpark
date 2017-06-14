@@ -87,22 +87,37 @@ public class GameManager : MonoBehaviour {
 
 	#region ScriptableObjects
 	/// <summary>
-	/// The language manager.
+	/// The audio manager.
 	/// </summary>
 	[HideInInspector]
-	public LanguageManager languageManager;
+	public AudioManager audioManager;
+
 
 	/// <summary>
 	/// The controller manager.
 	/// </summary>
 	[HideInInspector]
 	public ControllerManager controllerManager;
+
+	/// <summary>
+	/// The language manager.
+	/// </summary>
+	[HideInInspector]
+	public LanguageManager languageManager;
+
+	/// <summary>
+	/// The music manager.
+	/// </summary>
+	[HideInInspector]
+	public MusicManager musicManager;
 	#endregion
 
 	public void Start () {
 		//ScriptableObjects
-		languageManager = LanguageManager.Instance;
+		audioManager = AudioManager.Instance;
 		controllerManager = ControllerManager.Instance;
+		languageManager = LanguageManager.Instance;
+		musicManager = MusicManager.Instance;
 	}
 
 
@@ -120,7 +135,10 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	public void OnApplicationQuit() {
 		instance = null;
+		audioManager = null;
+		controllerManager = null;
 		languageManager = null;
+		musicManager = null;
 	}
 
 

@@ -54,11 +54,27 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Decreases the FX volume.
+	/// </summary>
+	public void DecreaseVolume(){
+		if (_fxSource.volume > 0.0f)
+			_fxSource.volume -= 0.1f;
+	}
+
+	/// <summary>
 	/// Gets the FX volume.
 	/// </summary>
 	/// <returns>The FX volume.</returns>
 	public float GetFXVolume(){
 		return _fxSource.volume;
+	}
+
+	/// <summary>
+	/// Increases the FX volume.
+	/// </summary>
+	public void IncreaseVolume(){
+		if (_fxSource.volume < 1.0f)
+			_fxSource.volume += 0.1f;
 	}
 
 	/// <summary>

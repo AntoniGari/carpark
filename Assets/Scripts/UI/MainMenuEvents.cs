@@ -82,8 +82,8 @@ public class MainMenuEvents : MonoBehaviour {
 	/// </summary>
 	public void ReturnOptions () {
 		optionsLanguage.SetActive (false);
-		//optionsGraphics.SetActive (false);
-		//optionsSound.SetActive (false);
+		optionsGraphics.SetActive (false);
+		optionsSound.SetActive (false);
 		optionsVR.SetActive (false);
 		options.SetActive (true);
 	}
@@ -149,6 +149,24 @@ public class MainMenuEvents : MonoBehaviour {
 	public void SelectVROptions () {
 		options.SetActive (false);
 		optionsVR.SetActive (true);
+	}
+	#endregion
+
+	#region Sound Options
+	public void ChangeFXVolume (bool increase){
+		if (increase)
+			GameManager.Instance.audioManager.IncreaseVolume ();
+		else
+			GameManager.Instance.audioManager.DecreaseVolume (); 
+	}
+
+	public void ChangeMusicVolume (bool increase){
+		if (increase)
+			GameManager.Instance.musicManager.IncreaseVolume ();
+		else {
+			Debug.Log ("ChangeMusicVolume");
+			GameManager.Instance.musicManager.DecreaseVolume (); 
+		}
 	}
 	#endregion
 

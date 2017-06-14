@@ -20,6 +20,7 @@ public class ComponentManager : ScriptableObject {
 		/// </summary>
 		public CameraComponents(){
 			audioSource = Camera.main.GetComponent<AudioSource> ();
+			Debug.Log(audioSource.ToString());
 		}
 
 		/// <summary>
@@ -82,7 +83,7 @@ public class ComponentManager : ScriptableObject {
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ComponentManager"/> class.
 	/// </summary>
-	private ComponentManager(){
+	public void Awake(){
 		//CAMERA COMPONENTS
 		camera = new CameraComponents ();
 

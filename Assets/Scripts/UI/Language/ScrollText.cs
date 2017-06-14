@@ -26,7 +26,6 @@ public class ScrollText : MonoBehaviour {
 	void Update () {
 		transform.position = new Vector3 (transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
 
-		Debug.Log ("ALçADA " + transform.position.y);
 		if (transform.position.y > maxHeight)
 			transform.position = new Vector3 (transform.position.x, startPosition, transform.position.z);
 	}
