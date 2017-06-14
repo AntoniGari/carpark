@@ -78,18 +78,10 @@ public class LanguageManager : ScriptableObject {
 		_textTable = new Dictionary<string, string>();
 		_txtFiles = new List<string>();
 
-		//Load the *.txt names files
-		DirectoryInfo dir = new DirectoryInfo(_templatePath);
-		FileInfo[] info = dir.GetFiles("*.txt");
-		foreach (FileInfo f in info)
-			_txtFiles.Add(f.Name);
+		//Add the *.txt language names files
+		_txtFiles.Add("Credits");
+		_txtFiles.Add("Menu");
 
-		/*string actualLanguage = PlayerPrefs.GetString(OptionsKey.Language, "none");
-		if (actualLanguage.CompareTo("none") == 0)
-			actualLanguage = Application.systemLanguage.ToString();
-
-		LoadLanguage(actualLanguage);
-		*/
 		_actualLanguage = _defaultLanguage;
 		LoadLanguage (_defaultLanguage);
 	}
@@ -137,37 +129,24 @@ public class LanguageManager : ScriptableObject {
 		_textTable.Clear();
 
 		foreach (string file in _txtFiles) {
-			// Create a new StreamReader, tell it which file to read and what encoding the file was saved as
-			StreamReader theReader = new StreamReader (EnumFolders.getLanguagesPath() + language + "/" + file, Encoding.UTF8);
 			firstLine = true;
 
-			using (theReader) {
-				do {
-					switch (file) {
-						case "Credits.txt":
-							line = theReader.ReadToEnd();
-						break;
-						default:
-							line = theReader.ReadLine ();
-						break;
-					}
+			TextAsset txtAsset = Resources.Load(EnumFolders.getLanguagesFolder() + "/" + language + "/" + file) as TextAsset;
+			string allTxtAsset = txtAsset.text;
 
-					if (line != null) {
-						if (!firstLine) {
-							values = line.Split ('\t');
-							//add the entry
-							_textTable.Add(values[0], values[1]);
-						} else {
-							firstLine = false;
-							if (file == "Credits.txt") {
-								_textTable.Add("CREDITS", line);
-								line = null;
-							}
-						}
-					}
-				} while (line != null);
+			switch (file) {
+			case "Credits":
+				_textTable.Add("CREDITS", allTxtAsset);
+			break;
+			default:
+				string[] lines = allTxtAsset.Split (new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+				for (int i = 1; i < lines.Length; ++i) {
+					values = lines[i].Split ('\t');
+					//add the entry
+					_textTable.Add(values[0], values[1]);
+				}
+			break;
 			}
-			theReader.Close ();
 		}
 	}
 	#endregion
