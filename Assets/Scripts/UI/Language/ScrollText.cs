@@ -24,10 +24,9 @@ public class ScrollText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//transform.position.y += 1 * Time.deltaTime;
-
 		transform.position = new Vector3 (transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
 
+		Debug.Log ("ALçADA " + transform.position.y);
 		if (transform.position.y > maxHeight)
 			transform.position = new Vector3 (transform.position.x, startPosition, transform.position.z);
 	}
