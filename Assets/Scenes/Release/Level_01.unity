@@ -6028,7 +6028,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: german
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -13903,8 +13903,9 @@ GameObject:
   - component: {fileID: 1685931115}
   - component: {fileID: 1685931117}
   - component: {fileID: 1685931116}
+  - component: {fileID: 1685931118}
   m_Layer: 0
-  m_Name: OPTIONS_LANGUAGE_OTHER
+  m_Name: OPTIONS_LANGUAGE_GERMAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13960,13 +13961,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OTHER
+  m_Text: OPTIONS_LANGUAGE_GERMAN
 --- !u!222 &1685931117
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685931114}
+--- !u!114 &1685931118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1685931114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f113a97c4f2a63248825dcba9e93ccf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textKey: 25
 --- !u!1001 &1686835021
 Prefab:
   m_ObjectHideFlags: 0
