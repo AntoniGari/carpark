@@ -22,7 +22,8 @@ public class LanguageManager : ScriptableObject {
 	private string[] languages = {
 		SystemLanguage.Catalan.ToString(),
 		SystemLanguage.English.ToString(),
-		SystemLanguage.Spanish.ToString()
+		SystemLanguage.Spanish.ToString(),
+		SystemLanguage.German.ToString()
 	};
 
 	/// <summary>
