@@ -58,6 +58,14 @@ public class CarDamage : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Tells if the car is alive.
+	/// </summary>
+	/// <returns><c>true</c>, if is alive was cared, <c>false</c> otherwise.</returns>
+	public bool carIsAlive() {
+		return carHealth > 0;
+	}
+
+	/// <summary>
 	/// Changes the health text.
 	/// </summary>
 	public void ChangeHealthText() {

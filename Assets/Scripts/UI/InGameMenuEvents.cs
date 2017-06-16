@@ -77,6 +77,16 @@ public class InGameMenuEvents : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Opens the options menu.
+	/// </summary>
+	public void OpenOptionsMenu() {
+		mainMenu.SetActive (false);
+		options.SetActive (true);
+		optionsLanguage.SetActive (false);
+		optionsVR.SetActive (false);
+	}
+
+	/// <summary>
 	/// Returns into the options menu.
 	/// </summary>
 	public void CloseInGameMenu () {
@@ -99,6 +109,7 @@ public class InGameMenuEvents : MonoBehaviour {
 	/// </summary>
 	public void SelectVROptions () {
 		mainMenu.SetActive (false);
+		options.SetActive (false);
 		optionsVR.SetActive (true);
 	}
 	#endregion
@@ -108,6 +119,7 @@ public class InGameMenuEvents : MonoBehaviour {
 	/// Selects the graphics menu.
 	/// </summary>
 	public void SelectGraphicsMenu () {
+		mainMenu.SetActive (false);
 		options.SetActive (false);
 		optionsGraphics.SetActive (true);
 	}
@@ -116,6 +128,7 @@ public class InGameMenuEvents : MonoBehaviour {
 	/// Selects the language menu.
 	/// </summary>
 	public void SelectLanguageMenu () {
+		mainMenu.SetActive (false);
 		options.SetActive (false);
 		optionsLanguage.SetActive (true);
 	}

@@ -19,7 +19,8 @@ public class InGameMenu : MonoBehaviour {
 	/// </summary>
 	public enum InGameMenuSelection {
 		IN_GAME_MENU_OPEN_CLOSE_MENU,
-		IN_GAME_MENU_IN_GAME_MENU
+		IN_GAME_MENU_IN_GAME_MENU,
+		IN_GAME_MENU_OPTIONS
 	};
 
 	/// <summary>
@@ -58,6 +59,9 @@ public class InGameMenu : MonoBehaviour {
 				return;
 			case InGameMenuSelection.IN_GAME_MENU_IN_GAME_MENU:
 				events.OpenInGameMenu ();
+				return;
+			case InGameMenuSelection.IN_GAME_MENU_OPTIONS:
+				events.OpenOptionsMenu ();
 				return;
 			}
 		}

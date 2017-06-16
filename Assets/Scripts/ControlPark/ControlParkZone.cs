@@ -26,6 +26,11 @@ public class ControlParkZone : MonoBehaviour {
 	public GameObject mainMenuWin;
 
 	/// <summary>
+	/// The car damage script.
+	/// </summary>
+	private CarDamage carDamage;
+
+	/// <summary>
 	/// The car controller.
 	/// </summary>
 	private CarUserControl carControl;
@@ -62,6 +67,7 @@ public class ControlParkZone : MonoBehaviour {
 		_fillingLogo = FillingLogo (checkingTime);
 		_unfillingLogo = null;
 		carControl = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarUserControl> ();
+		carDamage = GameObject.Find("ColliderBottom").GetComponent<CarDamage>();
 	}
 	
 	/// <summary>
@@ -99,7 +105,6 @@ public class ControlParkZone : MonoBehaviour {
 				StartCoroutine (_unfillingLogo);
 			}
 			--_wheels;
-
 		}
 	}
 
@@ -112,7 +117,9 @@ public class ControlParkZone : MonoBehaviour {
 		yield return new WaitForSeconds (waitTime);
 		carControl.Brake ();
 		carControl.enabled = false;
-		mainMenuWin.SetActive (true);
+
+		if (carDamage.carIsAlive())
+			mainMenuWin.SetActive (true);
 	}
 
 	/// <summary>
