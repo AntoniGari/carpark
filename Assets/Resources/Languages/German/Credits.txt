@@ -1,14 +1,14 @@
-<color=#fdd930>CARPARK VR</color>
+﻿<color=#fdd930>CARPARK VR</color>
 
 
 <color=#fdd930>DICHOTOMY GAMES</color>
 
 
-<color=#ffb400>GAME DESIGN</color>
+<color=#ffb400>SPIELDESIGN</color>
 Antoni Garí Romagosa
 
 
-<color=#ffb400>PROGRAMMING</color>
+<color=#ffb400>PROGRAMMIERUNG</color>
 Antoni Garí Romagosa
 
 
@@ -18,46 +18,51 @@ G.E.TeamDev
 Razrushitel34
 
 
-<color=#ffb400>GAME TESTING</color>
+<color=#ffb400>SPIELPRÜFUNG</color>
+Alita Molina
+Carles Casas
+Dinna Callao
 Joan Segovia
 Jofre Tremps
 Marc Esplugas
 Ricard Figueras
+Sergi Mondejar
+Ventura Orriols
 
 
-<color=#fdd929>TRANSLATORS</color>
-<color=#fdd929>Catalan Version</color>
+<color=#fdd929>ÜBERSETZEN</color>
+<color=#fdd929>Katalanische Version</color>
 Antoni Garí
 
-<color=#fdd929>English Version</color>
+<color=#fdd929>Englishe Version</color>
 Antoni Garí
 
-<color=#fdd929>German Version</color>
+<color=#fdd929>Deutsche Version</color>
 Alita Molina
 
-<color=#fdd929>Spanish Version</color>
+<color=#fdd929>Spanische Version</color>
 Antoni Garí
 
-<color=#fdd929>Others translations</color>
-If you want to participate in making a translation, send me a mail to dichotomygames@gmail.com and we will get in touch.
+<color=#fdd929>Weitere Übersetzungen</color>
+Ob Sie wollt mit übersetzen helfen,  bitte senden sie ein email für dichotomygames@gmail.com und wir könten reden.
 
 
-<color=#ffb400>VERY SPECIAL THANKS</color>
-To all our family and friends: Thank you so much for your love and support during the development of Carpark. Your patience and understanding make it all possible. I love you!
+<color=#ffb400>GANZ BESONDERER DANK</color>
+Für alle meine Familie und Freunde:  Vielen dank für ihre Liebe und Unterstützung der Entwicklung von Carpark. Ihre Geduld und Ihr Verständnis machen alles möglich. Ich liebe euch!
 
-To our players: Thank you for your passion and enthusiasm. You continue to push us forward and inspire us. We couldn’t do it without you!
+Zu meinen Spielern: Danke für deine Leidenschaft und Begeisterung. Ihr bringt mich weiter vor und begeistert mich. Ich konnte es nicht ohne dich tun!
 
-Also, a mention for people I have met throughout the Carpark development. You have crossed my life someone to stay it, others just passing. Instead of you're now a part of my life. A big hug! 
-
-
+Also, eine Erwähnung der Leute die mein Leben überqueren. Ihr seit jetzt ein Teil meines Lebens. Eine große Umarmung!
 
 
 
-This program was created using Unity 5.x.  Portions of this program © 2005-2016 Unity Technologies
 
-VR Google is a trademark of Google. registered in the Patent and Trademark Office of the United States and may be registered in certain jurisdictions.
 
-XCode is a trademark of Apple Inc. registered in the Patent and Trademark Office of the United States and may be registered in certain jurisdictions.
+Dieses Programm wurde mit Unity 5.x erstellt. Teile dieses Programms © 2005-2016 Unity Technologies
+
+Google ist eine Marke von Google. Eingetragen im Patent- und Markenamt der Vereinigten Staaten und kann in bestimmten Gerichtsbarkeiten eingetragen sein. 
+
+XCode ist eine Marke von Apple Inc., die in den United States Patent Attorneys registriert ist.
 
 
 CARPARK: 2016-2017 Dichotomy Games.

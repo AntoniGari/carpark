@@ -19,10 +19,15 @@ Razrushitel34
 
 
 <color=#ffb400>GAME TESTING</color>
+Alita Molina
+Carles Casas
+Dinna Callao
 Joan Segovia
 Jofre Tremps
 Marc Esplugas
 Ricard Figueras
+Sergi Mondejar
+Ventura Orriols
 
 
 <color=#fdd929>TRANSLATORS</color>
@@ -39,7 +44,7 @@ Alita Molina
 Antoni Garí
 
 <color=#fdd929>Others translations</color>
-If you want to participate in making a translation, send me a mail to dichotomygames@gmail.com and we will get in touch.
+If you want to participate in making a translation, send me an email to dichotomygames@gmail.com and we will get in touch.
 
 
 <color=#ffb400>VERY SPECIAL THANKS</color>
@@ -47,7 +52,7 @@ To all my family and friends: Thank you so much for your love and support during
 
 To my players: Thank you for your passion and enthusiasm. You continue to push us forward and inspire me. I couldn’t do it without you!
 
-Also, a mention for people I have met throughout the Carpark development. You have crossed my life someone to stay it, others just passing. Instead of you're now a part of my life. A big hug! 
+Also, a mention for people I have met throughout the Carpark development. You have crossed in to my life, some to stay, others just went thru. But you are now part of me. A big hug! 
 
 
 
