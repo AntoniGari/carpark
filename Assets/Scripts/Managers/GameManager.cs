@@ -144,9 +144,17 @@ public class GameManager : MonoBehaviour {
 		musicManager = null;
 	}
 
-
+	/// <summary>
+	/// Changes the VR options.
+	/// </summary>
+	/// <returns>The VR options.</returns>
 	private IEnumerator ChangeVROptions() {
+		#if UNITY_IOS
+		yield return new WaitForSeconds (0.5f);
+		#else
 		yield return new WaitForSeconds (0.1f);
+		#endif
+
 		GvrViewer.Instance.VRModeEnabled = vRModeEnabled;
 		GvrViewer.Instance.DistortionCorrectionEnabled = distortionCorrectionEnabled;
 	}
@@ -206,11 +214,6 @@ public class GameManager : MonoBehaviour {
 		SetState (GameState.STATE_INIT_LEVEL);
 
 		StartCoroutine (_changeVROptions);
-		/*
-		GvrViewer.Instance.VRModeEnabled = _vRModeEnabled;
-		GvrViewer.Instance.DistortionCorrectionEnabled = _distortionCorrectionEnabled;
-		Debug.Log ("GVRVIEWER VRMODE = " + GvrViewer.Instance.VRModeEnabled + " // GVRVIEWER DISTORTION CORRECTION = " + GvrViewer.Instance.DistortionCorrectionEnabled);
-		*/
 	}
 
 	/// <summary>

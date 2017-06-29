@@ -39,6 +39,7 @@ public class DefineParkZone : MonoBehaviour {
 				previousNode = nodes[nodes.Count - 1].position;
 			}
 
+			//Draw the Lines
 			Gizmos.DrawLine(previousNode, currentNode);
 			Gizmos.DrawWireSphere(currentNode, 0.3f);
 		}

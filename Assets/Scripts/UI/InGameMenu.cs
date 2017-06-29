@@ -44,6 +44,7 @@ public class InGameMenu : MonoBehaviour {
 	void Update () {
 		var inputDevice = InputManager.ActiveDevice;
 
+		//If menu button is pressed
 		if ((inputDevice.Action2 && inputDevice.Action2.HasChanged) || Input.GetButtonDown ("Cancel")) {
 			switch (selection) {
 			case InGameMenuSelection.IN_GAME_MENU_OPEN_CLOSE_MENU:

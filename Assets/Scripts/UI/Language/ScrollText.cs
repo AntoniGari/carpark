@@ -30,6 +30,9 @@ public class ScrollText : MonoBehaviour {
 			transform.position = new Vector3 (transform.position.x, startPosition, transform.position.z);
 	}
 
+	/// <summary>
+	/// Raises the disable event.
+	/// </summary>
 	void OnDisable() {
 		transform.position = new Vector3 (transform.position.x, startPosition, transform.position.z);
 	}

@@ -4,17 +4,42 @@ using System.Collections;
 public class InGameMenuEvents : MonoBehaviour {
 
 	#region Main Menu GameObjects
+	/// <summary>
+	/// The main menu GameObject.
+	/// </summary>
 	public GameObject mainMenu;
+
+	/// <summary>
+	/// The options GameObject.
+	/// </summary>
 	public GameObject options;
+
+	/// <summary>
+	/// The VR options GameObject.
+	/// </summary>
 	public GameObject optionsVR;
 	#endregion
 
 	#region Options Menu GameObjects
+	/// <summary>
+	/// The graphics options GameObject.
+	/// </summary>
 	public GameObject optionsGraphics;
+
+	/// <summary>
+	/// The sound options GameObject.
+	/// </summary>
 	public GameObject optionsSound;
+
+	/// <summary>
+	/// The language options GameObject.
+	/// </summary>
 	public GameObject optionsLanguage;
 	#endregion
 
+	/// <summary>
+	/// The back button.
+	/// </summary>
 	public GameObject backButton;
 
 	#region Actions
@@ -37,7 +62,6 @@ public class InGameMenuEvents : MonoBehaviour {
 	/// Restarts the level.
 	/// </summary>
 	public void RestartLevel() {
-		//GameManager.Instance.SetLevel ((GameManager.SceneLevel) GameManager.Instance.GetLevelNumber());
 		GameManager.Instance.RestartLevel();
 	}
 

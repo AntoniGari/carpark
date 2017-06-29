@@ -30,6 +30,7 @@ public class BackButton : MonoBehaviour {
 	void Update () {
 		var inputDevice = InputManager.ActiveDevice;
 
+		//If menu button is pressed
 		if ((inputDevice.Action2 && inputDevice.Action2.HasChanged) || Input.GetButtonDown ("Cancel")) {
 			switch (selection) {
 			case BackSelection.BACK_BUTTON_MAIN_MENU:

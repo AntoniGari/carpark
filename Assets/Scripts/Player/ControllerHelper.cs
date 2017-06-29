@@ -3,12 +3,29 @@ using UnityEngine.UI;
 using InControl;
 
 public class ControllerHelper : MonoBehaviour {
-
+	/// <summary>
+	/// The name text.
+	/// </summary>
 	public Text name;
+
+	/// <summary>
+	/// The coordenades x text.
+	/// </summary>
 	public Text coordenadesX;
+
+	/// <summary>
+	/// The coordenades y text.
+	/// </summary>
 	public Text coordenadesY;
 
+	/// <summary>
+	/// The height.
+	/// </summary>
 	private float _h;
+
+	/// <summary>
+	/// The vertical component.
+	/// </summary>
 	private float _v;
 
 	void Awake() {
@@ -23,8 +40,6 @@ public class ControllerHelper : MonoBehaviour {
 	void Update() {
 		var inputDevice = InputManager.ActiveDevice;
 
-		//name.text = inputDevice.Name;
-
 		if (inputDevice.IsKnown) {
 			var control = inputDevice.LeftStickX;
 			name.text = control.Value.ToString();
@@ -38,26 +53,5 @@ public class ControllerHelper : MonoBehaviour {
 		var controlY = inputDevice.LeftStickY;
 		_v = controlY.Value;
 		coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", _v);
-
 	}
-
-	/*
-	public float GetLeftStickX() {
-		var inputDevice = InputManager.ActiveDevice;
-
-		name.text = inputDevice.Name;
-
-		var controlX = inputDevice.LeftStickX;
-		coordenadesX.text = string.Format( "{0} {1}", "Left Stick X = ", controlX.Value);
-
-		return controlX.Value;
-	}
-
-	public float GetLeftStickY() {
-		var inputDevice = InputManager.ActiveDevice;
-		var controlY = inputDevice.LeftStickY;
-		coordenadesY.text = string.Format( "{0} {1}", "Left Stick Y = ", controlY.Value);
-		return controlY.Value;
-	}
-	*/
 }

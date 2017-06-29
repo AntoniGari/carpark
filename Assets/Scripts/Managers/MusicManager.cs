@@ -53,10 +53,6 @@ public class MusicManager : MonoBehaviour {
 	public void DecreaseVolume(){
 		Debug.Log ("DECREASE MUSIC");
 		_musicSource.Stop();
-		/*
-		if (_musicSource.volume > 0.0f)
-			_musicSource.volume -= 0.1f;
-		*/
 	}
 
 	/// <summary>

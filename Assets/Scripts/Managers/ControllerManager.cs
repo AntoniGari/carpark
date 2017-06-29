@@ -91,7 +91,6 @@ public class ControllerManager : ScriptableObject {
 			break;
 		}
 
-
 		return result;
 	}
 
@@ -120,9 +119,6 @@ public class ControllerManager : ScriptableObject {
 
 		if (IsPressed("Horitzontal"))
 			result = Input.GetAxis ("Horitzontal");
-
-		//if (IsPressed("RT") || IsPressed("LT"))
-		//	result = RightTrigger.RawValue - LeftTrigger.RawValue;
 
 		return result;
 	}

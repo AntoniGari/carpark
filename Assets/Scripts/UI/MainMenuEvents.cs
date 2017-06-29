@@ -2,27 +2,54 @@
 using System.Collections;
 
 public class MainMenuEvents : MonoBehaviour {
-
 	#region Main Menu GameObjects
+	/// <summary>
+	/// The main menu GameObject.
+	/// </summary>
 	public GameObject mainMenu;
+
+	/// <summary>
+	/// The select level GameObject.
+	/// </summary>
 	public GameObject selectLevel;
+
+	/// <summary>
+	/// The options GameObject.
+	/// </summary>
 	public GameObject options;
+
+	/// <summary>
+	/// The credits GameObject.
+	/// </summary>
 	public GameObject credits;
 	#endregion
 
 	#region Options Menu GameObjects
+	/// <summary>
+	/// The options graphics GameObject.
+	/// </summary>
 	public GameObject optionsGraphics;
+
+	/// <summary>
+	/// The VR options GameObject.
+	/// </summary>
 	public GameObject optionsVR;
+
+	/// <summary>
+	/// The Sound options GameObject.
+	/// </summary>
 	public GameObject optionsSound;
+
+	/// <summary>
+	/// The language options GameObject.
+	/// </summary>
 	public GameObject optionsLanguage;
 	#endregion
 
+	/// <summary>
+	/// The back button.
+	/// </summary>
 	public GameObject backButton;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 
 	#region Actions
 	/// <summary>
@@ -153,6 +180,10 @@ public class MainMenuEvents : MonoBehaviour {
 	#endregion
 
 	#region Sound Options
+	/// <summary>
+	/// Changes the FX volume.
+	/// </summary>
+	/// <param name="increase">If set to <c>true</c> increase.</param>
 	public void ChangeFXVolume (bool increase){
 		if (increase)
 			GameManager.Instance.audioManager.IncreaseVolume ();
@@ -160,11 +191,14 @@ public class MainMenuEvents : MonoBehaviour {
 			GameManager.Instance.audioManager.DecreaseVolume (); 
 	}
 
+	/// <summary>
+	/// Changes the music volume.
+	/// </summary>
+	/// <param name="increase">If set to <c>true</c> increase.</param>
 	public void ChangeMusicVolume (bool increase){
 		if (increase)
 			GameManager.Instance.musicManager.IncreaseVolume ();
 		else {
-			Debug.Log ("ChangeMusicVolume");
 			GameManager.Instance.musicManager.DecreaseVolume (); 
 		}
 	}

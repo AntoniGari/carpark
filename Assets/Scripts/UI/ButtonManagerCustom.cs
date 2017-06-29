@@ -4,8 +4,14 @@ using InControl;
 
 namespace InterfaceMovementCustom {
 	public class ButtonManagerCustom : MonoBehaviour {
+		/// <summary>
+		/// The focused button.
+		/// </summary>
 		public ButtonCustom focusedButton;
 
+		/// <summary>
+		/// The filtered direction.
+		/// </summary>
 		TwoAxisInputControl filteredDirection;
 
 		void Awake() {

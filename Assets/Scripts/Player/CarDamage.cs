@@ -49,6 +49,7 @@ public class CarDamage : MonoBehaviour {
 		carHealth = carHealthMax;
 		partsPerUnit = 1 / carHealthMax;
 	
+		//Find the GameObjects
 		carControl = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarUserControl> ();
 		healthText = GameObject.FindGameObjectWithTag ("HealthText").GetComponent<Text>();
 		wastedImage = GameObject.FindGameObjectWithTag ("WastedUI").GetComponent<Image>();
@@ -115,8 +116,6 @@ public class CarDamage : MonoBehaviour {
 	/// Reduces the life considering the actual speed.
 	/// </summary>
 	public void ReduceLife() {
-		//ERROR
-		//Debug.Log ("SPEED: " + carUserControl.GetCurrentSpeed());
 		ReduceLife (1.0f);
 	}
 
