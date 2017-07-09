@@ -187,14 +187,15 @@ public class GameManager : MonoBehaviour {
 	/// Restarts the level.
 	/// </summary>
 	public void RestartLevel() {
-		bool vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		bool distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
+		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
+		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
 
 		AudioManager.Instance.StopFX ();
 		SceneManager.LoadScene((int)sceneLevel);
 		SetState (GameState.STATE_INIT_LEVEL);
 
-		StartCoroutine (_changeVROptions);
+		GvrViewer.Instance.VRModeEnabled = vRModeEnabled;
+		GvrViewer.Instance.DistortionCorrectionEnabled = distortionCorrectionEnabled;
 	}
 
 	/// <summary>
@@ -217,8 +218,8 @@ public class GameManager : MonoBehaviour {
 	/// Sets the next level.
 	/// </summary>
 	public void SetNextLevel() {
-		bool distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
-		bool vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
+		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
+		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
 
 		int nextLevel = GetLevelNumber () + 1;
 		sceneLevel = (SceneLevel)nextLevel;
