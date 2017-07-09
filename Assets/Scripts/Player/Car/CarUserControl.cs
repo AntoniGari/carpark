@@ -16,12 +16,7 @@ namespace UnityStandardAssets.Vehicles.Car
 		/// </summary>
 		TwoAxisInputControl filteredDirection;
 
-		/// <summary>
-		/// The filtered direction.
-		/// </summary>
-		TwoAxisInputControl filteredBreak;
-
-        private void Awake() {
+		private void Awake() {
             // get the car controller
             m_Car = GetComponent<CarController>();
 
@@ -54,12 +49,12 @@ namespace UnityStandardAssets.Vehicles.Car
 			float handbrake = CrossPlatformInputManager.GetAxis("Jump");
 			m_Car.Move(h, v, v, handbrake);
 			#else
-			var inputBreak = InputManager.ActiveDevice;
-			filteredBreak.Filter (inputBreak.LeftTrigger, Time.deltaTime);
+			var inputDevice = InputManager.ActiveDevice;
+			float handbrake = inputDevice.LeftStick.IsPressed ? 1.0f:0.0f;
 
-			float handbrake = filteredBreak.IsPressed ? 1.0f:0.0f;
 			m_Car.Move(h, v, v, handbrake);
 			#endif
+
 
 
         }
