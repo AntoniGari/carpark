@@ -210,6 +210,7 @@ public class MainMenuEvents : MonoBehaviour {
 	/// </summary>
 	public void ToggleDistortionCorrection() {
 		GvrViewer.Instance.DistortionCorrectionEnabled = !GvrViewer.Instance.DistortionCorrectionEnabled;
+		GameManager.Instance.changeDistortionCorrection (GvrViewer.Instance.DistortionCorrectionEnabled);
 	}
 
 	/// <summary>
@@ -217,6 +218,7 @@ public class MainMenuEvents : MonoBehaviour {
 	/// </summary>
 	public void ToggleVRMode() {
 		GvrViewer.Instance.VRModeEnabled = !GvrViewer.Instance.VRModeEnabled;
+		GameManager.Instance.changeVRMode (GvrViewer.Instance.VRModeEnabled);
 	}
 	#endregion
 }

@@ -53,11 +53,6 @@ public class GameManager : MonoBehaviour {
 	private SceneLevel sceneLevel;
 
 	/// <summary>
-	/// Modify the VR options.
-	/// </summary>
-	private IEnumerator _changeVROptions;
-
-	/// <summary>
 	/// The vR mode enabled.
 	/// </summary>
 	private bool vRModeEnabled;
@@ -121,6 +116,10 @@ public class GameManager : MonoBehaviour {
 		controllerManager = ControllerManager.Instance;
 		languageManager = LanguageManager.Instance;
 		musicManager = MusicManager.Instance;
+
+		//NEW
+		vRModeEnabled = false;
+		distortionCorrectionEnabled = true;
 	}
 
 
@@ -130,7 +129,6 @@ public class GameManager : MonoBehaviour {
 	private GameManager() {
 		gameState 	= GameState.STATE_INIT_LEVEL;
 		sceneLevel	= SceneLevel.LEVEL_MENU;
-		_changeVROptions = ChangeVROptions ();
 	}
 
 	/// <summary>
@@ -144,28 +142,9 @@ public class GameManager : MonoBehaviour {
 		musicManager = null;
 	}
 
-	/// <summary>
-	/// Changes the VR options.
-	/// </summary>
-	/// <returns>The VR options.</returns>
-	private IEnumerator ChangeVROptions() {
-		#if UNITY_IOS
-		yield return new WaitForSeconds (0.5f);
-		#else
-		yield return new WaitForSeconds (0.1f);
-		#endif
-
-		GvrViewer.Instance.VRModeEnabled = vRModeEnabled;
-		GvrViewer.Instance.DistortionCorrectionEnabled = distortionCorrectionEnabled;
-		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
-	}
-
 	public void ChangeVROpt() {
 		GvrViewer.Instance.VRModeEnabled = vRModeEnabled;
 		GvrViewer.Instance.DistortionCorrectionEnabled = distortionCorrectionEnabled;
-		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
 	}
 
 	/// <summary>
@@ -202,17 +181,28 @@ public class GameManager : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Changes the VR mode.
+	/// </summary>
+	/// <param name="change">If set to <c>true</c> change.</param>
+	public void changeVRMode(bool change) {
+		vRModeEnabled = change;
+	}
+
+	/// <summary>
+	/// Changes the distortion correction.
+	/// </summary>
+	/// <param name="change">If set to <c>true</c> change.</param>
+	public void changeDistortionCorrection(bool change) {
+		distortionCorrectionEnabled = change;
+	}
+
+	/// <summary>
 	/// Restarts the level.
 	/// </summary>
 	public void RestartLevel() {
-		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
-
 		AudioManager.Instance.StopFX ();
 		SceneManager.LoadScene((int)sceneLevel);
 		SetState (GameState.STATE_INIT_LEVEL);
-
-		//StartCoroutine (_changeVROptions);
 	}
 
 	/// <summary>
@@ -220,24 +210,16 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="newLevel">New level.</param>
 	public void SetLevel(SceneLevel newLevel) {
-		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
-
 		sceneLevel = newLevel;
 		AudioManager.Instance.StopFX ();
 		SceneManager.LoadScene((int)sceneLevel);
 		SetState (GameState.STATE_INIT_LEVEL);
-
-		//StartCoroutine (_changeVROptions);
 	}
 
 	/// <summary>
 	/// Sets the next level.
 	/// </summary>
 	public void SetNextLevel() {
-		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
-
 		int nextLevel = GetLevelNumber () + 1;
 		sceneLevel = (SceneLevel)nextLevel;
 
@@ -248,8 +230,6 @@ public class GameManager : MonoBehaviour {
 			SceneManager.LoadScene (0);
 		}
 		SetState (GameState.STATE_INIT_LEVEL);
-
-		//StartCoroutine (_changeVROptions);
 	}
 
 	/// <summary>
