@@ -157,6 +157,15 @@ public class GameManager : MonoBehaviour {
 
 		GvrViewer.Instance.VRModeEnabled = vRModeEnabled;
 		GvrViewer.Instance.DistortionCorrectionEnabled = distortionCorrectionEnabled;
+		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
+		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
+	}
+
+	public void ChangeVROpt() {
+		GvrViewer.Instance.VRModeEnabled = vRModeEnabled;
+		GvrViewer.Instance.DistortionCorrectionEnabled = distortionCorrectionEnabled;
+		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
+		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
 	}
 
 	/// <summary>
@@ -183,10 +192,13 @@ public class GameManager : MonoBehaviour {
 		return gameState;
 	}
 
-	public void OnLevelWasLoaded(int level) {
-		StartCoroutine (_changeVROptions);
-		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
-		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
+
+	void OnEnable() {
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+		ChangeVROpt ();
 	}
 
 	/// <summary>
