@@ -49,9 +49,7 @@ namespace UnityStandardAssets.Vehicles.Car
 			float handbrake = CrossPlatformInputManager.GetAxis("Jump");
 			m_Car.Move(h, v, v, handbrake);
 			#else
-			var inputDevice = InputManager.ActiveDevice;
-			float handbrake = inputDevice.LeftStick.IsPressed ? 1.0f:0.0f;
-
+			float handbrake = inputDevice.Action3 && inputDevice.Action3.HasChanged ? 1.0f:0.0f;
 			m_Car.Move(h, v, v, handbrake);
 			#endif
 
