@@ -183,19 +183,22 @@ public class GameManager : MonoBehaviour {
 		return gameState;
 	}
 
+	public void OnLevelWasLoaded(int level) {
+		StartCoroutine (_changeVROptions);
+	}
+
 	/// <summary>
 	/// Restarts the level.
 	/// </summary>
 	public void RestartLevel() {
-		/*vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
+		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
 		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
 
 		AudioManager.Instance.StopFX ();
 		SceneManager.LoadScene((int)sceneLevel);
 		SetState (GameState.STATE_INIT_LEVEL);
 
-		StartCoroutine (_changeVROptions);*/
-		SetLevel ((int)sceneLevel);
+		//StartCoroutine (_changeVROptions);
 	}
 
 	/// <summary>
@@ -211,7 +214,7 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene((int)sceneLevel);
 		SetState (GameState.STATE_INIT_LEVEL);
 
-		StartCoroutine (_changeVROptions);
+		//StartCoroutine (_changeVROptions);
 	}
 
 	/// <summary>
@@ -232,7 +235,7 @@ public class GameManager : MonoBehaviour {
 		}
 		SetState (GameState.STATE_INIT_LEVEL);
 
-		StartCoroutine (_changeVROptions);
+		//StartCoroutine (_changeVROptions);
 	}
 
 	/// <summary>
