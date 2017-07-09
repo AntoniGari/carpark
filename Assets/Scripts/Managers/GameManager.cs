@@ -185,6 +185,8 @@ public class GameManager : MonoBehaviour {
 
 	public void OnLevelWasLoaded(int level) {
 		StartCoroutine (_changeVROptions);
+		vRModeEnabled = GvrViewer.Instance.VRModeEnabled;
+		distortionCorrectionEnabled = GvrViewer.Instance.DistortionCorrectionEnabled;
 	}
 
 	/// <summary>
